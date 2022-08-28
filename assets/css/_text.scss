@@ -1,0 +1,17 @@
+@mixin animated-underline($gradient: var(--line-gradient-1), $thickness: 2px) {
+	--animated-underline-thickness: #{$thickness};
+	background-image: $gradient;
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% var(--animated-underline-thickness);
+	transition: background-size 250ms;
+}
+
+@mixin animated-underline--visible {
+	background-size: 100% var(--animated-underline-thickness);
+}
+
+@mixin gradient-underline($gradient: var(--line-gradient-1), $thickness: 2px) {
+	@include animated-underline($gradient, $thickness);
+	@include animated-underline--visible;
+}

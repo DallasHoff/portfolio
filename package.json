@@ -1,0 +1,29 @@
+{
+  "name": "dallas-hoffman-portfolio",
+  "private": true,
+  "author": {
+    "name": "Dallas Hoffman",
+    "email": "contact@dallashoffman.com"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "build": "nuxt build",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@vueuse/core": "^9.1.0",
+    "@vueuse/nuxt": "^9.1.0",
+    "nuxt": "3.0.0-rc.6",
+    "nuxt-lodash": "^2.2.0",
+    "sass": "^1.54.0",
+    "typescript": "^4.7.4",
+    "vue-tsc": "^0.39.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-brands-svg-icons": "^6.1.2",
+    "@fortawesome/pro-light-svg-icons": "^6.1.2",
+    "@fortawesome/vue-fontawesome": "^3.0.1"
+  }
+}
