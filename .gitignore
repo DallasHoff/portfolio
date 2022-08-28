@@ -5,6 +5,7 @@
 .nitro
 .cache
 .output
+.firebase
 .env
 dist
 .npmrc

@@ -9,7 +9,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "build": "nuxt build",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+		"deploy": "nuxt generate && firebase deploy"
   },
   "devDependencies": {
     "@vueuse/core": "^9.1.0",
