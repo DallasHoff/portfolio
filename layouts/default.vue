@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const route = useRoute();
-</script>
-
 <template>
 	<div>
 		<site-navbar></site-navbar>
@@ -10,11 +6,11 @@ const route = useRoute();
 				<slot name="hero"></slot>
 			</div>
 			<div class="layout-header__content">
-				<h1 v-if="route.meta.title" class="layout-header__title">
-					{{ route.meta.title }}
+				<h1 v-if="$route.meta.title" class="layout-header__title">
+					{{ $route.meta.title }}
 				</h1>
-				<div v-if="route.meta.subtitle" class="layout-header__subtitle">
-					{{ route.meta.subtitle }}
+				<div v-if="$route.meta.subtitle" class="layout-header__subtitle">
+					{{ $route.meta.subtitle }}
 				</div>
 				<div v-if="$slots.header" class="layout-header__slot">
 					<slot name="header"></slot>

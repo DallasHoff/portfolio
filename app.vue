@@ -13,12 +13,18 @@ const keywords: string[] = [
 ];
 
 const title = computed<string>(() => {
-	const titleSegs: string[] = [route.meta.title ?? '', appName];
 	const delimiter = ' | ';
+	const titleSegs: string[] = [appName];
+
+	route.matched.forEach((routeLevel) => {
+		titleSegs.unshift(routeLevel.meta.title ?? '');
+	});
+
 	return titleSegs
 		.filter((seg, i, segs) => !!seg && seg !== segs[i + 1])
 		.join(delimiter);
 });
+
 const description = computed<string>(() => {
 	return route.meta.description ?? defaultDescription;
 });

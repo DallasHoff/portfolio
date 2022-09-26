@@ -1,4 +1,3 @@
-export {};
 declare module 'vue-router' {
 	interface PageMeta {
 		title?: string;
@@ -6,3 +5,5 @@ declare module 'vue-router' {
 		description?: string;
 	}
 }
+
+export {};
