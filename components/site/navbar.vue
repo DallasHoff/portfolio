@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// TODO: workaround for https://github.com/nuxt/framework/issues/5546
-import { unref as _unref } from 'vue';
-
 const label1 = ref<HTMLElement | null>(null);
 const { width: label1Width } = useElementSize(label1);
 

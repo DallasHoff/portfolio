@@ -10,16 +10,16 @@
     "generate": "nuxt generate",
     "build": "nuxt build",
     "preview": "nuxt preview",
-		"deploy": "nuxt generate && firebase deploy"
+    "deploy": "nuxt generate && firebase deploy"
   },
   "devDependencies": {
-    "@vueuse/core": "^9.1.0",
-    "@vueuse/nuxt": "^9.1.0",
-    "nuxt": "3.0.0-rc.6",
-    "nuxt-lodash": "^2.2.0",
-    "sass": "^1.54.0",
-    "typescript": "^4.7.4",
-    "vue-tsc": "^0.39.2"
+    "@vueuse/core": "^9.3.0",
+    "@vueuse/nuxt": "^9.3.0",
+    "nuxt": "^3.0.0-rc.11",
+    "nuxt-lodash": "^2.3.0",
+    "sass": "^1.55.0",
+    "typescript": "^4.8.3",
+    "vue-tsc": "^0.40.13"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
