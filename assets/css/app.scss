@@ -1,3 +1,4 @@
+@use 'tokens';
 @use 'fonts';
 
 *,
@@ -6,56 +7,6 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-}
-
-:root {
-	--bg-color-0: hsl(214, 47%, 0%);
-	--bg-color-1: hsl(214, 47%, 5%);
-	--bg-color-2: hsl(214, 47%, 10%);
-	--bg-color-3: hsl(214, 47%, 15%);
-	--bg-color-4: hsl(214, 47%, 20%);
-	--bg-color-5: hsl(214, 47%, 25%);
-
-	--text-color-0: hsl(214, 47%, 100%);
-	--text-color-1: hsl(214, 47%, 95%);
-	--text-color-2: hsl(214, 47%, 90%);
-	--text-color-3: hsl(214, 47%, 85%);
-	--text-color-4: hsl(214, 47%, 80%);
-	--text-color-5: hsl(214, 47%, 75%);
-
-	--accent-color-a0: hsl(131, 78%, 30%);
-	--accent-color-a1: hsl(131, 78%, 40%);
-	--accent-color-a2: hsl(131, 78%, 50%);
-	--accent-color-a3: hsl(131, 78%, 60%);
-	--accent-color-a4: hsl(131, 78%, 70%);
-	--accent-color-a5: hsl(131, 78%, 80%);
-
-	--accent-color-b0: hsl(176, 78%, 30%);
-	--accent-color-b1: hsl(176, 78%, 40%);
-	--accent-color-b2: hsl(176, 78%, 50%);
-	--accent-color-b3: hsl(176, 78%, 60%);
-	--accent-color-b4: hsl(176, 78%, 70%);
-	--accent-color-b5: hsl(176, 78%, 80%);
-
-	--accent-color-c0: hsl(260, 78%, 30%);
-	--accent-color-c1: hsl(260, 78%, 40%);
-	--accent-color-c2: hsl(260, 78%, 50%);
-	--accent-color-c3: hsl(260, 78%, 60%);
-	--accent-color-c4: hsl(260, 78%, 70%);
-	--accent-color-c5: hsl(260, 78%, 80%);
-
-	--line-gradient-1: linear-gradient(
-		to right,
-		var(--accent-color-c3),
-		var(--accent-color-b3)
-	);
-
-	--text-shadow-1: 0 0.1em 0.2em #000000df;
-
-	--box-shadow-1: 0 0.1em 0.2em #00000075;
-
-	--content-width: 1000px;
-	--content-padding: 2rem;
 }
 
 html {
