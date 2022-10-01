@@ -1,47 +1,30 @@
 <script setup lang="ts">
-const label1 = ref<HTMLElement | null>(null);
-const { width: label1Width } = useElementSize(label1);
+export interface SiteNavbarProps {
+	links: { label: string; icon: string; path: string }[];
+}
 
-const label2 = ref<HTMLElement | null>(null);
-const { width: label2Width } = useElementSize(label2);
+defineProps<SiteNavbarProps>();
 
-const label3 = ref<HTMLElement | null>(null);
-const { width: label3Width } = useElementSize(label3);
+const linkListRef = ref<HTMLElement | null>(null);
+const labelRefs = ref<HTMLElement[]>([]);
+const itemsWidth = ref<string>('auto');
 
-const itemsWidth = computed<string>(() => {
-	const widestLabelWidth: number = Math.max(
-		label1Width.value,
-		label2Width.value,
-		label3Width.value
-	);
-
-	if (!widestLabelWidth) {
-		return 'auto';
-	}
-
-	return `${widestLabelWidth}px`;
+useResizeObserver(linkListRef, () => {
+	const labelWidths = labelRefs.value.map((ref) => ref.offsetWidth);
+	const widestLabelWidth = Math.max(...labelWidths);
+	itemsWidth.value = widestLabelWidth ? `${widestLabelWidth}px` : 'auto';
 });
 </script>
 
 <template>
 	<nav class="site-navbar">
-		<ul class="site-navbar__link-list">
-			<li class="site-navbar__item">
-				<nuxt-link to="/" class="site-navbar__link">
-					<fa-icon icon="fa-light fa-user-tie-hair"></fa-icon>
-					<span ref="label1" class="site-navbar__label">About Me</span>
-				</nuxt-link>
-			</li>
-			<li class="site-navbar__item">
-				<nuxt-link to="/projects" class="site-navbar__link">
-					<fa-icon icon="fa-light fa-display-code"></fa-icon>
-					<span ref="label2" class="site-navbar__label">Projects</span>
-				</nuxt-link>
-			</li>
-			<li class="site-navbar__item">
-				<nuxt-link to="/blog" class="site-navbar__link">
-					<fa-icon icon="fa-light fa-newspaper"></fa-icon>
-					<span ref="label3" class="site-navbar__label">Blog</span>
+		<ul ref="linkListRef" class="site-navbar__link-list">
+			<li v-for="link in links" class="site-navbar__item">
+				<nuxt-link :to="link.path" class="site-navbar__link">
+					<fa-icon :icon="link.icon"></fa-icon>
+					<span ref="labelRefs" class="site-navbar__label">
+						{{ link.label }}
+					</span>
 				</nuxt-link>
 			</li>
 		</ul>
@@ -53,6 +36,8 @@ const itemsWidth = computed<string>(() => {
 
 .site-navbar {
 	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
 	padding: 0.6em var(--content-padding);
 	border-bottom: 1px solid var(--bg-color-5);
 	background-color: #000000cf;

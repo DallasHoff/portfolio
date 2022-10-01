@@ -1,6 +1,28 @@
+<script setup lang="ts">
+import { SiteNavbarProps } from '~~/components/site/navbar.vue';
+
+const navbarLinks: SiteNavbarProps['links'] = [
+	{
+		label: 'About Me',
+		path: '/',
+		icon: 'fa-light fa-user-tie-hair',
+	},
+	{
+		label: 'Projects',
+		path: '/projects',
+		icon: 'fa-light fa-display-code',
+	},
+	{
+		label: 'Blog',
+		path: '/blog',
+		icon: 'fa-light fa-newspaper',
+	},
+];
+</script>
+
 <template>
 	<div>
-		<site-navbar></site-navbar>
+		<site-navbar :links="navbarLinks"></site-navbar>
 		<header class="layout-header">
 			<div class="layout-header__hero">
 				<slot name="hero"></slot>
