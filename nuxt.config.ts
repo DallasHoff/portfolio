@@ -1,5 +1,16 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+	runtimeConfig: {
+		public: {},
+	},
+	build: {
+		transpile: [
+			'@fortawesome/vue-fontawesome',
+			'@fortawesome/fontawesome-svg-core',
+			'@fortawesome/pro-light-svg-icons',
+			'@fortawesome/free-brands-svg-icons',
+		],
+	},
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -21,8 +32,5 @@ export default defineNuxtConfig({
 	modules: ['nuxt-lodash', '@vueuse/nuxt'],
 	lodash: {
 		prefix: '_',
-	},
-	runtimeConfig: {
-		public: {},
 	},
 });

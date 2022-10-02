@@ -21,7 +21,7 @@ useResizeObserver(linkListRef, () => {
 		<ul ref="linkListRef" class="site-navbar__link-list">
 			<li v-for="link in links" class="site-navbar__item">
 				<nuxt-link :to="link.path" class="site-navbar__link">
-					<site-icon :icon="link.icon"></site-icon>
+					<fa-icon :icon="link.icon"></fa-icon>
 					<span ref="labelRefs" class="site-navbar__label">
 						{{ link.label }}
 					</span>

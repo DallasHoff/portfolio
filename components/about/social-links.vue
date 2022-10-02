@@ -6,7 +6,7 @@
 				to="https://www.linkedin.com/in/dallas-hoffman/"
 				class="about-social-links__link"
 			>
-				<site-icon icon="fa-brands fa-linkedin"></site-icon>
+				<fa-icon icon="fa-brands fa-linkedin"></fa-icon>
 			</nuxt-link>
 		</li>
 		<li>
@@ -15,7 +15,7 @@
 				to="https://github.com/DallasHoff"
 				class="about-social-links__link"
 			>
-				<site-icon icon="fa-brands fa-github"></site-icon>
+				<fa-icon icon="fa-brands fa-github"></fa-icon>
 			</nuxt-link>
 		</li>
 		<li>
@@ -24,7 +24,7 @@
 				to="mailto:contact@dallashoffman.com"
 				class="about-social-links__link"
 			>
-				<site-icon icon="fa-light fa-square-envelope"></site-icon>
+				<fa-icon icon="fa-light fa-square-envelope"></fa-icon>
 			</nuxt-link>
 		</li>
 	</ul>
