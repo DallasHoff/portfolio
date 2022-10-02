@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { SiteNavbarProps } from '~~/components/site/navbar.vue';
+import { AppNavbarProps } from '~~/components/app/navbar.vue';
 
-const navbarLinks: SiteNavbarProps['links'] = [
+const navbarLinks: AppNavbarProps['links'] = [
 	{
 		label: 'About Me',
 		path: '/',
@@ -22,7 +22,7 @@ const navbarLinks: SiteNavbarProps['links'] = [
 
 <template>
 	<div>
-		<site-navbar :links="navbarLinks"></site-navbar>
+		<app-navbar :links="navbarLinks"></app-navbar>
 		<header class="layout-header">
 			<div class="layout-header__hero">
 				<slot name="hero"></slot>

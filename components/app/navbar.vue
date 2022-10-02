@@ -1,9 +1,9 @@
 <script setup lang="ts">
-export interface SiteNavbarProps {
+export interface AppNavbarProps {
 	links: { label: string; icon: string; path: string }[];
 }
 
-defineProps<SiteNavbarProps>();
+defineProps<AppNavbarProps>();
 
 const linkListRef = ref<HTMLElement | null>(null);
 const labelRefs = ref<HTMLElement[]>([]);
@@ -17,12 +17,12 @@ useResizeObserver(linkListRef, () => {
 </script>
 
 <template>
-	<nav class="site-navbar">
-		<ul ref="linkListRef" class="site-navbar__link-list">
-			<li v-for="link in links" class="site-navbar__item">
-				<nuxt-link :to="link.path" class="site-navbar__link">
+	<nav class="app-navbar">
+		<ul ref="linkListRef" class="app-navbar__link-list">
+			<li v-for="link in links" class="app-navbar__item">
+				<nuxt-link :to="link.path" class="app-navbar__link">
 					<fa-icon :icon="link.icon"></fa-icon>
-					<span ref="labelRefs" class="site-navbar__label">
+					<span ref="labelRefs" class="app-navbar__label">
 						{{ link.label }}
 					</span>
 				</nuxt-link>
@@ -34,7 +34,7 @@ useResizeObserver(linkListRef, () => {
 <style lang="scss">
 @use '~/assets/css/text';
 
-.site-navbar {
+.app-navbar {
 	font-size: 1.2rem;
 	display: flex;
 	align-items: center;
@@ -89,7 +89,7 @@ useResizeObserver(linkListRef, () => {
 }
 
 @media (min-width: 540px) {
-	.site-navbar {
+	.app-navbar {
 		padding: 1em var(--content-padding);
 
 		&__item {
@@ -102,7 +102,7 @@ useResizeObserver(linkListRef, () => {
 
 			&:hover,
 			&:focus-visible {
-				.site-navbar__label {
+				.app-navbar__label {
 					@include text.animated-underline--visible;
 				}
 			}
