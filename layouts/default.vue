@@ -46,7 +46,7 @@ const navbarLinks: AppNavbarProps['links'] = [
 </template>
 
 <style lang="scss" scoped>
-@use '~/assets/css/cards';
+@use 'cards';
 
 .layout-header {
 	--layout-header-breakout-size: 2.2em;

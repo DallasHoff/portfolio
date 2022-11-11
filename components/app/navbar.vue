@@ -32,7 +32,7 @@ useResizeObserver(linkListRef, () => {
 </template>
 
 <style lang="scss">
-@use '~/assets/css/text';
+@use 'text';
 
 .app-navbar {
 	font-size: 1.2rem;
