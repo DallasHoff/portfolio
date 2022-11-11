@@ -31,12 +31,12 @@ const description = computed<string>(() => {
 
 useHead(() => ({
 	title: title.value,
-	charset: 'utf-8',
-	viewport: 'width=device-width, initial-scale=1',
 	htmlAttrs: {
 		lang: 'en',
 	},
 	meta: [
+		{ charset: 'utf-8' },
+		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 		{ name: 'og:title', content: title.value },
 		{ name: 'twitter:title', content: title.value },
 		{ name: 'application-name', content: appName },
