@@ -1,17 +1,26 @@
 # Dallas Hoffman's Portfolio Site
 
-Built with Nuxt 3. Look at the [Nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+## Tools Used
+
+- [Nuxt 3](https://v3.nuxtjs.org)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [SCSS](https://sass-lang.com/documentation/)
+- [Lodash](https://lodash.com/docs/)
+- [VueUse](https://vueuse.org/functions.html)
+- [Font Awesome](https://fontawesome.com/icons)
 
 ## Setup
 
-Make sure to install the dependencies:
+1. Add `.npmrc` file at the root of the project with a token for the Font Awesome Pro registry. ([More Info](https://fontawesome.com/docs/web/setup/packages))
+1. Install the [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) editor extension for code formatting.
+1. Install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
 # npm
 npm install
+
+# yarn
+yarn install
 
 # pnpm
 pnpm install --shamefully-hoist
