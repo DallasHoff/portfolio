@@ -24,7 +24,7 @@
 				to="mailto:contact@dallashoffman.com"
 				class="about-social-links__link"
 			>
-				<fa-icon icon="fa-light fa-square-envelope"></fa-icon>
+				<fa-icon icon="fa-light fa-envelope"></fa-icon>
 			</nuxt-link>
 		</li>
 	</ul>

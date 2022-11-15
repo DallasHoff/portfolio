@@ -1,22 +1,22 @@
 import { library, config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
-	faSquareEnvelope,
 	faUserTieHair,
 	faDisplayCode,
 	faNewspaper,
+	faEnvelope,
 } from '@fortawesome/pro-light-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 config.autoAddCss = false;
 
 library.add(
-	faSquareEnvelope,
 	faLinkedin,
 	faGithub,
 	faUserTieHair,
 	faDisplayCode,
-	faNewspaper
+	faNewspaper,
+	faEnvelope
 );
 
 export default defineNuxtPlugin((nuxtApp) => {
