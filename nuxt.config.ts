@@ -29,7 +29,7 @@ export default defineNuxtConfig({
 		'@fortawesome/fontawesome-svg-core/styles.css',
 		'@/assets/css/app.scss',
 	],
-	modules: ['nuxt-lodash', '@vueuse/nuxt'],
+	modules: ['nuxt-lodash', 'nuxt-icon', '@vueuse/nuxt'],
 	lodash: {
 		prefix: '_',
 	},
