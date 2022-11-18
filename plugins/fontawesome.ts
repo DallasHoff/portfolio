@@ -20,5 +20,11 @@ library.add(
 );
 
 export default defineNuxtPlugin((nuxtApp) => {
-	nuxtApp.vueApp.component('fa-icon', FontAwesomeIcon, {});
+	nuxtApp.vueApp.component('fa-icon', FontAwesomeIcon);
 });
+
+declare module '@vue/runtime-core' {
+	export interface GlobalComponents {
+		FaIcon: typeof FontAwesomeIcon;
+	}
+}
