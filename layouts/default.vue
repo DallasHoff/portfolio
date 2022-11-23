@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { AppNavbarProps } from '~~/components/app/navbar.vue';
+import { AppNavbarLink } from '~~/components/app/navbar.vue';
 
-const navbarLinks: AppNavbarProps['links'] = [
+const navbarLinks: AppNavbarLink[] = [
 	{
 		label: 'About Me',
 		path: '/',

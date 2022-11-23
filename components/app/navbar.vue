@@ -1,9 +1,12 @@
 <script setup lang="ts">
-export interface AppNavbarProps {
-	links: { label: string; icon: string; path: string }[];
-}
+export type AppNavbarLink = { label: string; icon: string; path: string };
 
-defineProps<AppNavbarProps>();
+defineProps({
+	links: {
+		type: Array as PropType<AppNavbarLink[]>,
+		required: true,
+	},
+});
 
 const linkListRef = ref<HTMLElement | null>(null);
 const labelRefs = ref<HTMLElement[]>([]);

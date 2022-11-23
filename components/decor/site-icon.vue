@@ -1,14 +1,8 @@
 <script setup lang="ts">
-withDefaults(
-	defineProps<{
-		scale?: number;
-		shape?: 'square' | 'circle';
-	}>(),
-	{
-		scale: 1,
-		shape: 'square',
-	}
-);
+defineProps({
+	scale: { type: Number, default: 1 },
+	shape: { type: String as PropType<'square' | 'circle'>, default: 'square' },
+});
 </script>
 
 <template>
@@ -19,7 +13,7 @@ withDefaults(
 
 <style lang="scss">
 .decor-site-icon {
-	font-size: calc(50px * v-bind('scale'));
+	font-size: calc(50px * v-bind(scale));
 	width: 2.4em;
 	height: 2.4em;
 	display: flex;
