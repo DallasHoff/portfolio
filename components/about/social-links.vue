@@ -31,35 +31,17 @@
 </template>
 
 <style lang="scss">
+@use 'buttons';
+
 .about-social-links {
-	font-size: 1.8rem;
+	font-size: 1.2rem;
 	list-style-type: none;
 	display: flex;
 	justify-content: center;
-	gap: 0.8em;
+	gap: 1.2em;
 
 	&__link {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 1.8em;
-		height: 1.8em;
-		line-height: 1;
-		color: var(--text-color-3);
-		background-color: var(--bg-color-4);
-		box-shadow: var(--box-shadow-1), inset 0 0 0.2em #ffffff25;
-		border-radius: 50%;
-
-		&:hover,
-		&:focus-visible {
-			color: var(--text-color-1);
-			background-color: var(--bg-color-5);
-		}
-
-		&:active {
-			color: var(--text-color-5);
-			background-color: var(--bg-color-3);
-		}
+		@include buttons.circle-button;
 	}
 }
 </style>
