@@ -16,7 +16,7 @@
   "devDependencies": {
     "@vueuse/core": "^9.3.0",
     "@vueuse/nuxt": "^9.3.0",
-    "nuxt": "^3.0.0-rc.13",
+    "nuxt": "^3.0.0",
     "nuxt-icon": "^0.1.7",
     "nuxt-lodash": "^2.3.0",
     "sass": "^1.55.0",
