@@ -14,10 +14,10 @@
     "prepare": "nuxt build"
   },
   "devDependencies": {
+    "@nuxt/image-edge": "^1.0.0-27827328.bc9ddc0",
     "@vueuse/core": "^9.3.0",
     "@vueuse/nuxt": "^9.3.0",
     "nuxt": "^3.0.0",
-    "nuxt-icon": "^0.1.7",
     "nuxt-lodash": "^2.3.0",
     "sass": "^1.55.0",
     "typescript": "^4.8.3",
