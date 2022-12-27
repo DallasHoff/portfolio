@@ -1,30 +1,32 @@
+<script setup lang="ts">
+const links: { label: string; icon: string; url: string }[] = [
+	{
+		label: 'My LinkedIn Profile',
+		icon: 'fa-brands fa-linkedin',
+		url: 'https://www.linkedin.com/in/dallas-hoffman/',
+	},
+	{
+		label: 'My GitHub Profile',
+		icon: 'fa-brands fa-github',
+		url: 'https://github.com/DallasHoff',
+	},
+	{
+		label: 'Email Me',
+		icon: 'fa-light fa-envelope',
+		url: 'mailto:contact@dallashoffman.com',
+	},
+];
+</script>
+
 <template>
 	<ul class="about-social-links">
-		<li>
+		<li v-for="link in links">
 			<nuxt-link
-				aria-label="My LinkedIn Profile"
-				to="https://www.linkedin.com/in/dallas-hoffman/"
+				:aria-label="link.label"
+				:to="link.url"
 				class="about-social-links__link"
 			>
-				<fa-icon icon="fa-brands fa-linkedin"></fa-icon>
-			</nuxt-link>
-		</li>
-		<li>
-			<nuxt-link
-				aria-label="My GitHub Profile"
-				to="https://github.com/DallasHoff"
-				class="about-social-links__link"
-			>
-				<fa-icon icon="fa-brands fa-github"></fa-icon>
-			</nuxt-link>
-		</li>
-		<li>
-			<nuxt-link
-				aria-label="Email Me"
-				to="mailto:contact@dallashoffman.com"
-				class="about-social-links__link"
-			>
-				<fa-icon icon="fa-light fa-envelope"></fa-icon>
+				<fa-icon :icon="link.icon"></fa-icon>
 			</nuxt-link>
 		</li>
 	</ul>
