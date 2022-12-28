@@ -15,6 +15,7 @@ export default {
 			explodedHeadsCountdown: 0,
 			prevGrid: [],
 			grid: [],
+			static: false,
 		};
 	},
 	computed: {
@@ -69,13 +70,18 @@ export default {
 				this.grid.push(row);
 			}
 			this.spawn();
+			// Redraw if static
+			if (this.static === true) {
+				this.drawStaticImage();
+			}
 		},
 		drawFrame(timestamp) {
 			// Draw new frame to canvas according to settings and state
 			if (
 				this.$refs.canvas &&
-				timestamp - this.lastFrameTime > this.frameDuration &&
-				(this.lastFrameTime === 0 || !this.paused)
+				(this.static === true ||
+					(timestamp - this.lastFrameTime > this.frameDuration &&
+						(this.lastFrameTime === 0 || !this.paused)))
 			) {
 				let canvas = this.$refs.canvas;
 				let ctx = canvas.getContext('2d');
@@ -143,7 +149,9 @@ export default {
 				this.updateGrid();
 				this.lastFrameTime = timestamp;
 			}
-			window.requestAnimationFrame(this.drawFrame);
+			if (!this.static) {
+				window.requestAnimationFrame(this.drawFrame);
+			}
 		},
 		updateGrid() {
 			// Copy grid to previous grid
@@ -254,6 +262,14 @@ export default {
 			// Interation makes all snakes die
 			this.explodedHeadsCountdown = this.tailLength + 1;
 		},
+		drawStaticImage() {
+			// Render some frames without animation
+			requestAnimationFrame(() => {
+				for (let i = 0; i < 20; i++) {
+					this.drawFrame();
+				}
+			});
+		},
 	},
 	setup() {
 		// Get colors from CSS variables
@@ -274,8 +290,15 @@ export default {
 			this.resize(offsetWidth, offsetHeight);
 		});
 		resizeObserver.observe(this.$refs.container);
-		// Start animation
-		window.requestAnimationFrame(this.drawFrame);
+		// Draw
+		if (window.matchMedia('(prefers-reduced-motion)').matches) {
+			// Render static image
+			this.static = true;
+			this.drawStaticImage();
+		} else {
+			// Start animation
+			window.requestAnimationFrame(this.drawFrame);
+		}
 	},
 };
 </script>

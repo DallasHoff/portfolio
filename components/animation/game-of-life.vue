@@ -17,6 +17,7 @@ export default {
 			lastFrameTime: 0,
 			prevGrid: [],
 			grid: [],
+			static: false,
 		};
 	},
 	methods: {
@@ -60,6 +61,10 @@ export default {
 				for (let i = 0; i < numSquares; i++) {
 					this.spawn();
 				}
+			}
+			// Redraw if static
+			if (this.static === true) {
+				this.drawStaticImage();
 			}
 		},
 		add(x, y) {
@@ -142,8 +147,9 @@ export default {
 			// Draw new frame to canvas according to settings and state
 			if (
 				this.$refs.canvas &&
-				timestamp - this.lastFrameTime > this.frameDuration &&
-				(this.lastFrameTime === 0 || !this.paused)
+				(this.static === true ||
+					(timestamp - this.lastFrameTime > this.frameDuration &&
+						(this.lastFrameTime === 0 || !this.paused)))
 			) {
 				let canvas = this.$refs.canvas;
 				let ctx = canvas.getContext('2d');
@@ -165,7 +171,9 @@ export default {
 				this.updateGrid();
 				this.lastFrameTime = timestamp;
 			}
-			window.requestAnimationFrame(this.drawFrame);
+			if (!this.static) {
+				window.requestAnimationFrame(this.drawFrame);
+			}
 		},
 		handleClick(evt) {
 			// Spawn squares where user clicks
@@ -174,6 +182,14 @@ export default {
 			let x = Math.floor((evt.clientX - canvasRect.left) / this.squareSize);
 			let y = Math.floor((evt.clientY - canvasRect.top) / this.squareSize);
 			this.spawn(x, y);
+		},
+		drawStaticImage() {
+			// Render some frames without animation
+			requestAnimationFrame(() => {
+				for (let i = 0; i < 20; i++) {
+					this.drawFrame();
+				}
+			});
 		},
 	},
 	setup() {
@@ -190,8 +206,15 @@ export default {
 			this.resize(offsetWidth, offsetHeight);
 		});
 		resizeObserver.observe(this.$refs.container);
-		// Start animation
-		window.requestAnimationFrame(this.drawFrame);
+		// Draw
+		if (window.matchMedia('(prefers-reduced-motion)').matches) {
+			// Render static image
+			this.static = true;
+			this.drawStaticImage();
+		} else {
+			// Start animation
+			window.requestAnimationFrame(this.drawFrame);
+		}
 	},
 };
 </script>
