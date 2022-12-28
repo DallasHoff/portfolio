@@ -21,44 +21,46 @@ const navbarLinks: AppNavbarLink[] = [
 </script>
 
 <template>
-	<div>
+	<div class="layout-default">
 		<app-navbar :links="navbarLinks"></app-navbar>
-		<header class="layout-header">
-			<div class="layout-header__hero">
+		<header class="layout-default__header">
+			<div class="layout-default__hero">
 				<slot name="hero"></slot>
 			</div>
-			<div class="layout-header__content">
-				<h1 v-if="$route.meta.title" class="layout-header__title">
+			<div class="layout-default__content">
+				<h1 v-if="$route.meta.title" class="layout-default__title">
 					{{ $route.meta.title }}
 				</h1>
-				<div v-if="$route.meta.subtitle" class="layout-header__subtitle">
+				<div v-if="$route.meta.subtitle" class="layout-default__subtitle">
 					{{ $route.meta.subtitle }}
 				</div>
-				<div v-if="$slots.header" class="layout-header__slot">
+				<div v-if="$slots.header" class="layout-default__header-slot">
 					<slot name="header"></slot>
 				</div>
 			</div>
 		</header>
-		<main class="layout-main">
+		<main class="layout-default__main">
 			<slot></slot>
 		</main>
 	</div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use 'cards';
 
-.layout-header {
-	--layout-header-breakout-size: 2.2em;
-	font-size: 2.5rem;
-	position: relative;
-	min-height: 240px;
-	height: 30vh;
-	max-height: 480px;
-	margin-bottom: var(--layout-header-breakout-size);
-	background-color: var(--bg-color-3);
-	border-bottom: 1px solid var(--bg-color-5);
-	text-shadow: var(--text-shadow-1);
+.layout-default {
+	&__header {
+		--layout-default-header-breakout-size: 2.2em;
+		font-size: 2.5rem;
+		position: relative;
+		min-height: 240px;
+		height: 30vh;
+		max-height: 480px;
+		margin-bottom: var(--layout-default-header-breakout-size);
+		background-color: var(--bg-color-3);
+		border-bottom: 1px solid var(--bg-color-5);
+		text-shadow: var(--text-shadow-1);
+	}
 
 	&__hero {
 		position: absolute;
@@ -78,7 +80,7 @@ const navbarLinks: AppNavbarLink[] = [
 		justify-content: center;
 		gap: 0.4em;
 		position: absolute;
-		bottom: calc(var(--layout-header-breakout-size) * -1);
+		bottom: calc(var(--layout-default-header-breakout-size) * -1);
 		left: 0;
 		right: 0;
 		width: calc(100vw - (var(--content-padding) * 2));
@@ -88,7 +90,7 @@ const navbarLinks: AppNavbarLink[] = [
 		text-align: center;
 	}
 
-	&__slot {
+	&__header-slot {
 		font-size: 1rem;
 	}
 
@@ -103,11 +105,11 @@ const navbarLinks: AppNavbarLink[] = [
 		line-height: 1.4;
 		word-break: normal;
 	}
-}
 
-.layout-main {
-	margin: 0 auto;
-	padding: var(--content-padding);
-	max-width: calc(var(--content-width) + (var(--content-padding) * 2));
+	&__main {
+		margin: 0 auto;
+		padding: var(--content-padding);
+		max-width: calc(var(--content-width) + (var(--content-padding) * 2));
+	}
 }
 </style>
