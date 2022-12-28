@@ -31,6 +31,11 @@ h4,
 h5,
 h6 {
 	font-weight: 700;
+	color: var(--text-color-4);
+}
+
+h1 {
+	color: var(--text-color-2);
 }
 
 p + p {
