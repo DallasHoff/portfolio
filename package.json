@@ -5,6 +5,10 @@
     "name": "Dallas Hoffman",
     "email": "contact@dallashoffman.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DallasHoff/portfolio"
+  },
   "scripts": {
     "dev": "nuxt dev",
     "generate": "nuxt generate",
