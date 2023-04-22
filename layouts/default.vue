@@ -76,7 +76,6 @@ const navbarLinks: AppNavbarLink[] = [
 		@include cards.glassy-card;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: center;
 		gap: 0.4em;
 		position: absolute;
@@ -95,12 +94,14 @@ const navbarLinks: AppNavbarLink[] = [
 	}
 
 	&__title {
+		view-transition-name: layout-default__title;
 		font-size: 1.2em;
 		line-height: 1.2;
 		word-break: normal;
 	}
 
 	&__subtitle {
+		view-transition-name: layout-default__subtitle;
 		font-size: 0.5em;
 		line-height: 1.4;
 		word-break: normal;

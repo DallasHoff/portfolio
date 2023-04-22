@@ -38,6 +38,7 @@ useResizeObserver(linkListRef, () => {
 @use 'text';
 
 .app-navbar {
+	view-transition-name: app-navbar;
 	font-size: 1.2rem;
 	display: flex;
 	align-items: center;
