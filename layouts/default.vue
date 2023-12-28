@@ -51,7 +51,7 @@ const navbarLinks: AppNavbarLink[] = [
 .layout-default {
 	&__header {
 		--layout-default-header-breakout-size: 2.2em;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		position: relative;
 		min-height: 240px;
 		height: 30vh;
@@ -91,12 +91,14 @@ const navbarLinks: AppNavbarLink[] = [
 
 	&__header-slot {
 		font-size: 1rem;
+		margin-top: 0.4em;
 	}
 
 	&__title {
 		view-transition-name: layout-default__title;
 		font-size: 1.2em;
-		line-height: 1.2;
+		line-height: 1.1;
+		text-wrap: pretty;
 		word-break: normal;
 	}
 
@@ -104,6 +106,7 @@ const navbarLinks: AppNavbarLink[] = [
 		view-transition-name: layout-default__subtitle;
 		font-size: 0.5em;
 		line-height: 1.4;
+		text-wrap: pretty;
 		word-break: normal;
 	}
 
@@ -111,6 +114,14 @@ const navbarLinks: AppNavbarLink[] = [
 		margin: 0 auto;
 		padding: var(--content-padding);
 		max-width: calc(var(--content-width) + (var(--content-padding) * 2));
+	}
+}
+
+@media (min-width: 600px) {
+	.layout-default {
+		&__header {
+			font-size: 2.5rem;
+		}
 	}
 }
 </style>

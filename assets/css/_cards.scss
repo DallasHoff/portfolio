@@ -1,9 +1,21 @@
+@mixin solid-card {
+	padding: 1rem;
+	background-color: #0a1019;
+	border: 1px solid #b5b5b555;
+	border-radius: 0.5rem;
+	box-shadow:
+		inset 0 0 0.8rem 0.3rem #ffffff22,
+		0 0.2rem 0.3rem #00000088;
+}
+
 @mixin glassy-card {
 	padding: 1rem;
 	background-color: #00000055;
 	border: 1px solid #b5b5b555;
 	border-radius: 0.5rem;
-	box-shadow: inset 0 0 0.8rem 0.3rem #ffffff22, 0 0.2rem 0.3rem #00000088;
+	box-shadow:
+		inset 0 0 0.8rem 0.3rem #ffffff22,
+		0 0.2rem 0.3rem #00000088;
 	backdrop-filter: blur(1rem);
 }
 
