@@ -18,7 +18,7 @@
     "prepare": "nuxt build"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.1.0-28393680.ddd021d",
+    "@nuxt/image": "^1.1.0",
     "@vueuse/core": "^10.7.1",
     "@vueuse/nuxt": "^10.7.1",
     "nuxt": "^3.9.0",
