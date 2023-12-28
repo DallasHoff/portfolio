@@ -14,11 +14,11 @@ const favoriteTools: { label: string; icon: string }[] = [
 	{ label: 'Vite', icon: 'file-type-vite' },
 	{ label: 'Vitest', icon: 'vitest' },
 	{ label: 'Pinia', icon: 'pinia' },
-	{ label: 'Angular', icon: 'file-type-angular' },
+	{ label: 'Angular', icon: 'angular' },
 	{ label: 'Lodash', icon: 'lodash' },
 	{ label: 'Prettier', icon: 'file-type-prettier' },
 	{ label: 'Capacitor', icon: 'file-type-capacitor' },
-	{ label: 'MySQL', icon: 'file-type-mysql' },
+	{ label: 'SQLite', icon: 'sqlite' },
 	{ label: 'NGINX', icon: 'file-type-nginx' },
 ];
 const favoriteToolsGroups = _Chunk(
