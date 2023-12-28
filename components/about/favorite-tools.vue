@@ -21,7 +21,7 @@ const favoriteTools: { label: string; icon: string }[] = [
 	{ label: 'SQLite', icon: 'sqlite' },
 	{ label: 'NGINX', icon: 'file-type-nginx' },
 ];
-const favoriteToolsGroups = _Chunk(
+const favoriteToolsGroups = _chunk(
 	favoriteTools,
 	Math.ceil(favoriteTools.length / 2)
 );
