@@ -4,5 +4,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "scss.lint.unknownProperties": "ignore"
+  "scss.lint.unknownProperties": "ignore",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

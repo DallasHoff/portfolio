@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppNavbarLink } from '~~/components/app/navbar.vue';
+import type { AppNavbarLink } from '~~/components/app/navbar.vue';
 
 const navbarLinks: AppNavbarLink[] = [
 	{
