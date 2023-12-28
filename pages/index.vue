@@ -14,6 +14,17 @@ definePageMeta({
 				<about-social-links></about-social-links>
 			</template>
 			<section class="page-about__section">
+				<h2>About Me</h2>
+				<p class="page-about__about-me">
+					Skilled at learning new concepts quickly, planning ahead, and creative
+					thinking, I am a self-starter that loves to stay up to date on the
+					newest technologies and put them to use. I have been working in web
+					programming for over seven years, learning, building, and competing
+					all the way. I am especially experienced with JavaScript/TypeScript
+					and developing interactive and user-friendly interfaces.
+				</p>
+			</section>
+			<section class="page-about__section">
 				<h2>Tools I Love</h2>
 				<about-favorite-tools></about-favorite-tools>
 			</section>
@@ -62,6 +73,10 @@ definePageMeta({
 			text-align: center;
 			margin-bottom: 0.25rem;
 		}
+	}
+
+	&__about-me {
+		text-align: center;
 	}
 
 	.about-favorite-tools {
