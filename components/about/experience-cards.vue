@@ -51,7 +51,25 @@ const experience: {
 
 	&__card {
 		@include cards.solid-card;
+		--card-glow-color: transparent;
 		padding: 1.2rem 1.8rem;
+		background-image: radial-gradient(
+			circle at 90% 100%,
+			color-mix(in srgb, var(--card-glow-color) 50%, transparent) 0%,
+			transparent 8em
+		);
+
+		&:nth-child(3n + 1) {
+			--card-glow-color: var(--accent-color-a3);
+		}
+
+		&:nth-child(3n + 2) {
+			--card-glow-color: var(--accent-color-b3);
+		}
+
+		&:nth-child(3n + 3) {
+			--card-glow-color: var(--accent-color-c3);
+		}
 	}
 
 	&__years {
