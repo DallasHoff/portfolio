@@ -9,6 +9,7 @@ const favoriteTools: { label: string; icon: string }[] = [
 	{ label: 'SCSS', icon: 'file-type-scss2' },
 	{ label: 'ESLint', icon: 'file-type-eslint' },
 	{ label: 'Firebase', icon: 'file-type-firebase' },
+	{ label: 'Kysely', icon: 'kysely' },
 	{ label: 'Vue', icon: 'file-type-vue' },
 	{ label: 'Nuxt', icon: 'file-type-nuxt' },
 	{ label: 'Vite', icon: 'file-type-vite' },
