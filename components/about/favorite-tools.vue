@@ -24,7 +24,7 @@ const favoriteTools: { label: string; icon: string }[] = [
 ];
 const favoriteToolsGroups = _chunk(
 	favoriteTools,
-	Math.ceil(favoriteTools.length / 2)
+	Math.ceil(favoriteTools.length / 2),
 );
 </script>
 

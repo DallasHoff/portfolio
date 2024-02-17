@@ -7,7 +7,6 @@
 - [SCSS](https://sass-lang.com/documentation/)
 - [Lodash](https://lodash.com/docs/)
 - [VueUse](https://vueuse.org/functions.html)
-- [Nuxt Icon](https://github.com/nuxt-modules/icon)
 - [Font Awesome](https://fontawesome.com/icons)
 
 ## Setup

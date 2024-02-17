@@ -10,6 +10,7 @@ const keywords: string[] = [
 	'web developer',
 	'programmer',
 	'software engineer',
+	'full stack',
 ];
 
 const title = computed<string>(() => {

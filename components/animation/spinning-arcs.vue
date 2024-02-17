@@ -82,7 +82,7 @@ export default {
 						y,
 						arc.r,
 						arc.angle * Math.PI,
-						(arc.angle - arc.slice) * Math.PI
+						(arc.angle - arc.slice) * Math.PI,
 					);
 					ctx.stroke();
 				});
@@ -99,7 +99,7 @@ export default {
 				// Generate a set of arcs
 				let arcs = [];
 				let gapSize = Math.floor(
-					this.greaterDim / this.arcCount / this.cropScale
+					this.greaterDim / this.arcCount / this.cropScale,
 				);
 				let ccw = false;
 				for (let i = 0; i < this.arcCount; i++) {
@@ -113,7 +113,7 @@ export default {
 						slice:
 							this.randomInt(
 								this.arcSliceSizeMin * 100,
-								this.arcSliceSizeMax * 100
+								this.arcSliceSizeMax * 100,
 							) / 100,
 						width: this.greaterDim * this.lineWidthScale * widthVariation,
 						color: this.getColor(i),

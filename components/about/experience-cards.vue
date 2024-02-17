@@ -10,7 +10,7 @@ const experience: {
 		title: 'Junior Software Engineer',
 		years: '2021 - Present',
 		description:
-			'Building enterprise Angular web applications with modern web tooling, helping to design and implement user interfaces and systems to accept and process complex user data.',
+			'Building enterprise Angular and Vue web applications with modern web tooling, helping to design and implement user interfaces and systems to validate, process, and visualize complex user data.',
 	},
 	{
 		company: 'Southern Automation, Logistics & Technology',

@@ -8,10 +8,10 @@ const props = defineProps({
 
 const animationDuration = computed(() => `${props.durationSeconds}s`);
 const animationDirection = computed(() =>
-	props.reversed ? 'reverse' : 'normal'
+	props.reversed ? 'reverse' : 'normal',
 );
 const animationFillMode = computed(() =>
-	props.reversed ? 'backwards' : 'forwards'
+	props.reversed ? 'backwards' : 'forwards',
 );
 </script>
 

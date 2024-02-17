@@ -23,15 +23,15 @@ export default defineNuxtConfig({
 			},
 		},
 	},
+	css: [
+		'@fortawesome/fontawesome-svg-core/styles.css',
+		'@/assets/css/app.scss',
+	],
 	typescript: {
 		strict: true,
 		typeCheck: true,
 		shim: false,
 	},
-	css: [
-		'@fortawesome/fontawesome-svg-core/styles.css',
-		'@/assets/css/app.scss',
-	],
 	modules: ['@nuxt/image', 'nuxt-lodash', '@vueuse/nuxt'],
 	lodash: {
 		prefix: '_',
