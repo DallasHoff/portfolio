@@ -30,11 +30,41 @@ const currentYear = new Date().getFullYear();
 			</section>
 			<section class="page-about__section">
 				<h2>Experience</h2>
-				<about-experience-cards></about-experience-cards>
+				<div class="page-about__experience">
+					<about-experience-card
+						years="2021 - Present"
+						title="Applied Research Associates"
+						subtitle="Junior Software Engineer"
+						description="Building enterprise Angular and Vue web applications with modern web tooling, helping to design and implement user interfaces and systems to validate, process, and visualize complex user data."
+					></about-experience-card>
+					<about-experience-card
+						years="2021"
+						title="Southern Automation, Logistics & Technology"
+						subtitle="Software Development Intern"
+						description="Interned working on a medical practice management system built with ASP.NET, improving the frontend interface, modifying SQL procedures, and expanding and debugging C# scripts."
+					></about-experience-card>
+					<about-experience-card
+						years="2018 - 2020"
+						title="Freelance"
+						subtitle="Freelance Web Developer"
+						description="Started out building promotional websites for small businesses."
+					></about-experience-card>
+				</div>
 			</section>
 			<section class="page-about__section">
 				<h2>Tools I Love</h2>
 				<about-favorite-tools></about-favorite-tools>
+			</section>
+			<section class="page-about__section">
+				<h2>Education</h2>
+				<div class="page-about__experience">
+					<about-experience-card
+						years="2017 - 2021"
+						title="Bachelor of Science in Information Technology"
+						subtitle="Summa Cum Laude"
+						description="Studied at Georgia Southern University and Middle Georgia State University with Web and Mobile Development concentration."
+					></about-experience-card>
+				</div>
 			</section>
 		</nuxt-layout>
 	</div>
@@ -53,6 +83,12 @@ const currentYear = new Date().getFullYear();
 
 	&__about-me {
 		text-align: center;
+	}
+
+	&__experience {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
 	}
 
 	.about-favorite-tools {

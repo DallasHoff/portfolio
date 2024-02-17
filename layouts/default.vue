@@ -113,6 +113,7 @@ const navbarLinks: AppNavbarLink[] = [
 	&__main {
 		margin: 0 auto;
 		padding: var(--content-padding);
+		padding-bottom: calc(var(--content-padding) * 1.5);
 		max-width: calc(var(--content-width) + (var(--content-padding) * 2));
 	}
 }
