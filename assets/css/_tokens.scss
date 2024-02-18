@@ -34,16 +34,66 @@
 	--accent-color-c4: hsl(260, 78%, 70%);
 	--accent-color-c5: hsl(260, 78%, 80%);
 
+	--navbar-bg-color: hsl(0 0% 0% / 0.8);
+	--solid-card-bg-color: hsl(216 43% 7%);
+	--glassy-card-bg-color: hsl(0 0% 0% / 0.333);
+	--card-border-color: #b5b5b555;
+
+	--text-shadow-1: 0 0.1em 0.2em hsl(0 0% 0% / 0.875);
+	--box-shadow-1: 0 0.1em 0.2em hsl(0 0% 0% / 0.45);
+	--box-shadow-inset-1: inset 0 0 0.2em hsl(0 0% 100% / 0.145);
+
 	--line-gradient-1: linear-gradient(
 		to right,
 		var(--accent-color-c3),
 		var(--accent-color-b3)
 	);
 
-	--text-shadow-1: 0 0.1em 0.2em #000000df;
-
-	--box-shadow-1: 0 0.1em 0.2em #00000075;
-
 	--content-width: 1000px;
 	--content-padding: 2rem;
+}
+
+[data-theme='light'] {
+	--bg-color-0: hsl(214, 47%, 100%);
+	--bg-color-1: hsl(214, 47%, 95%);
+	--bg-color-2: hsl(214, 47%, 90%);
+	--bg-color-3: hsl(214, 47%, 85%);
+	--bg-color-4: hsl(214, 47%, 80%);
+	--bg-color-5: hsl(214, 47%, 75%);
+
+	--text-color-0: hsl(214, 47%, 0%);
+	--text-color-1: hsl(214, 47%, 5%);
+	--text-color-2: hsl(214, 47%, 10%);
+	--text-color-3: hsl(214, 47%, 15%);
+	--text-color-4: hsl(214, 47%, 20%);
+	--text-color-5: hsl(214, 47%, 25%);
+
+	--accent-color-a0: hsl(131, 78%, 20%);
+	--accent-color-a1: hsl(131, 78%, 30%);
+	--accent-color-a2: hsl(131, 78%, 40%);
+	--accent-color-a3: hsl(131, 78%, 50%);
+	--accent-color-a4: hsl(131, 78%, 60%);
+	--accent-color-a5: hsl(131, 78%, 70%);
+
+	--accent-color-b0: hsl(194, 78%, 30%);
+	--accent-color-b1: hsl(194, 78%, 40%);
+	--accent-color-b2: hsl(194, 78%, 50%);
+	--accent-color-b3: hsl(194, 78%, 60%);
+	--accent-color-b4: hsl(194, 78%, 70%);
+	--accent-color-b5: hsl(194, 78%, 80%);
+
+	--accent-color-c0: hsl(260, 78%, 40%);
+	--accent-color-c1: hsl(260, 78%, 50%);
+	--accent-color-c2: hsl(260, 78%, 60%);
+	--accent-color-c3: hsl(260, 78%, 70%);
+	--accent-color-c4: hsl(260, 78%, 80%);
+	--accent-color-c5: hsl(260, 78%, 90%);
+
+	--navbar-bg-color: hsl(0 0% 100% / 0.8);
+	--solid-card-bg-color: hsl(216 43% 93%);
+	--glassy-card-bg-color: hsl(0 0% 100% / 0.333);
+
+	--text-shadow-1: 0 0.1em 0.2em hsl(0 0% 0% / 0.25);
+	--box-shadow-1: 0 0.1em 0.2em hsl(0 0% 0% / 0.35);
+	--box-shadow-inset-1: inset 0 0 0.2em hsl(0 0% 100% / 0.15);
 }

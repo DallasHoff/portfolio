@@ -42,7 +42,7 @@ useResizeObserver(linkListRef, () => {
 	align-items: center;
 	padding: 0.6em var(--content-padding);
 	border-bottom: 1px solid var(--bg-color-5);
-	background-color: #000000cf;
+	background-color: var(--navbar-bg-color);
 	backdrop-filter: blur(1rem);
 
 	&__link-list {
