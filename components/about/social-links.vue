@@ -1,21 +1,10 @@
 <script setup lang="ts">
-const links: { label: string; icon: string; url: string }[] = [
-	{
-		label: 'My LinkedIn Profile',
-		icon: 'fa-brands fa-linkedin',
-		url: 'https://www.linkedin.com/in/dallas-hoffman/',
+defineProps({
+	links: {
+		type: Array as PropType<{ label: string; icon: string; url: string }[]>,
+		required: true,
 	},
-	{
-		label: 'My GitHub Profile',
-		icon: 'fa-brands fa-github',
-		url: 'https://github.com/DallasHoff',
-	},
-	{
-		label: 'Email Me',
-		icon: 'fa-light fa-envelope',
-		url: 'mailto:contact@dallashoffman.com',
-	},
-];
+});
 </script>
 
 <template>

@@ -4,7 +4,19 @@ definePageMeta({
 	subtitle: 'Web Application Developer in Orlando, FL',
 });
 
-const currentYear = new Date().getFullYear();
+const yearsExperience = new Date().getFullYear() - 2017;
+const { data: socialLinks } = await useAsyncData(() => {
+	return queryContent('/about/social-links').findOne();
+});
+const { data: aboutMe } = await useAsyncData(() => {
+	return queryContent('/about/about-me').findOne();
+});
+const { data: experience } = await useAsyncData(() => {
+	return queryContent('/about/experience').findOne();
+});
+const { data: favoriteTools } = await useAsyncData(() => {
+	return queryContent('/about/favorite-tools').findOne();
+});
 </script>
 
 <template>
@@ -14,55 +26,37 @@ const currentYear = new Date().getFullYear();
 				<animation-triangle-snakes></animation-triangle-snakes>
 			</template>
 			<template #header>
-				<about-social-links></about-social-links>
+				<about-social-links :links="socialLinks?.body"></about-social-links>
 			</template>
 			<section class="page-about__section">
 				<h2>About Me</h2>
-				<p class="page-about__about-me">
-					Skilled at learning new concepts quickly, planning ahead, and creative
-					thinking, I am a self-starter that loves to stay up to date on the
-					newest technologies and put them to use. I have been working in web
-					programming for over {{ currentYear - 2017 }} years, learning,
-					building, and competing all the way. I am especially experienced with
-					JavaScript/TypeScript and developing interactive and user-friendly
-					interfaces.
-				</p>
+				<content-renderer
+					:value="aboutMe"
+					:data="{ yearsExperience }"
+					class="page-about__about-me"
+				></content-renderer>
 			</section>
 			<section class="page-about__section">
 				<h2>Experience</h2>
 				<div class="page-about__experience">
 					<about-experience-card
-						years="2021 - Present"
-						title="Applied Research Associates"
-						subtitle="Junior Software Engineer"
-						description="Building enterprise Angular and Vue web applications with modern web tooling, helping to design and implement user interfaces and systems to validate, process, and visualize complex user data."
-					></about-experience-card>
-					<about-experience-card
-						years="2021"
-						title="Southern Automation, Logistics & Technology"
-						subtitle="Software Development Intern"
-						description="Interned working on a medical practice management system built with ASP.NET, improving the frontend interface, modifying SQL procedures, and expanding and debugging C# scripts."
-					></about-experience-card>
-					<about-experience-card
-						years="2018 - 2020"
-						title="Freelance"
-						subtitle="Freelance Web Developer"
-						description="Started out building promotional websites for small businesses."
+						v-for="card of experience?.career"
+						v-bind="card"
 					></about-experience-card>
 				</div>
 			</section>
 			<section class="page-about__section">
 				<h2>Tools I Love</h2>
-				<about-favorite-tools></about-favorite-tools>
+				<about-favorite-tools
+					:tools="favoriteTools?.body"
+				></about-favorite-tools>
 			</section>
 			<section class="page-about__section">
 				<h2>Education</h2>
 				<div class="page-about__experience">
 					<about-experience-card
-						years="2017 - 2021"
-						title="Bachelor of Science in Information Technology"
-						subtitle="Summa Cum Laude"
-						description="Studied at Georgia Southern University and Middle Georgia State University with Web and Mobile Development concentration."
+						v-for="card of experience?.education"
+						v-bind="card"
 					></about-experience-card>
 				</div>
 			</section>

@@ -1,37 +1,18 @@
 <script setup lang="ts">
-const favoriteTools: { label: string; icon: string }[] = [
-	{ label: 'VSCode', icon: 'file-type-vscode' },
-	{ label: 'JavaScript', icon: 'file-type-js-official' },
-	{ label: 'TypeScript', icon: 'file-type-typescript-official' },
-	{ label: 'Node.js', icon: 'file-type-node' },
-	{ label: 'HTML', icon: 'file-type-html' },
-	{ label: 'CSS', icon: 'file-type-css' },
-	{ label: 'SCSS', icon: 'file-type-scss2' },
-	{ label: 'ESLint', icon: 'file-type-eslint' },
-	{ label: 'Firebase', icon: 'file-type-firebase' },
-	{ label: 'Kysely', icon: 'kysely' },
-	{ label: 'Vue', icon: 'file-type-vue' },
-	{ label: 'Nuxt', icon: 'file-type-nuxt' },
-	{ label: 'Vite', icon: 'file-type-vite' },
-	{ label: 'Vitest', icon: 'vitest' },
-	{ label: 'Pinia', icon: 'pinia' },
-	{ label: 'Angular', icon: 'angular' },
-	{ label: 'Lodash', icon: 'lodash' },
-	{ label: 'Prettier', icon: 'file-type-prettier' },
-	{ label: 'Capacitor', icon: 'file-type-capacitor' },
-	{ label: 'SQLite', icon: 'sqlite' },
-	{ label: 'NGINX', icon: 'file-type-nginx' },
-];
-const favoriteToolsGroups = _chunk(
-	favoriteTools,
-	Math.ceil(favoriteTools.length / 2),
-);
+const props = defineProps({
+	tools: {
+		type: Array as PropType<{ label: string; icon: string }[]>,
+		required: true,
+	},
+});
+
+const toolsGroups = _chunk(props.tools, Math.ceil(props.tools.length / 2));
 </script>
 
 <template>
 	<div class="about-favorite-tools">
 		<app-marquee
-			v-for="(toolsGroup, groupIdx) in favoriteToolsGroups"
+			v-for="(toolsGroup, groupIdx) in toolsGroups"
 			fade-edges
 			pause-on-hover
 			:duration-seconds="40"

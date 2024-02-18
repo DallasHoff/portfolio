@@ -1,28 +1,12 @@
 <script setup lang="ts">
-import type { AppNavbarLink } from '~~/components/app/navbar.vue';
-
-const navbarLinks: AppNavbarLink[] = [
-	{
-		label: 'About Me',
-		path: '/',
-		icon: 'fa-light fa-user-tie-hair',
-	},
-	{
-		label: 'Projects',
-		path: '/projects',
-		icon: 'fa-light fa-display-code',
-	},
-	{
-		label: 'Blog',
-		path: '/blog',
-		icon: 'fa-light fa-newspaper',
-	},
-];
+const { data: navbar } = await useAsyncData(() => {
+	return queryContent('/navbar').findOne();
+});
 </script>
 
 <template>
 	<div class="layout-default">
-		<app-navbar :links="navbarLinks"></app-navbar>
+		<app-navbar :links="navbar?.body"></app-navbar>
 		<header class="layout-default__header">
 			<div class="layout-default__hero">
 				<slot name="hero"></slot>
