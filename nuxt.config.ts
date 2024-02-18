@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 		typeCheck: true,
 		shim: false,
 	},
-	modules: ['@nuxt/image', 'nuxt-lodash', '@vueuse/nuxt'],
+	modules: ['@nuxt/image', 'nuxt-lodash', '@vueuse/nuxt', '@nuxt/content'],
 	lodash: {
 		prefix: '_',
 		upperAfterPrefix: false,
