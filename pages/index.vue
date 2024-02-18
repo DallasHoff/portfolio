@@ -60,6 +60,9 @@ const { data: favoriteTools } = await useAsyncData(() => {
 					></about-experience-card>
 				</div>
 			</section>
+			<section class="page-about__section">
+				<about-site-source></about-site-source>
+			</section>
 		</nuxt-layout>
 	</div>
 </template>
@@ -87,6 +90,10 @@ const { data: favoriteTools } = await useAsyncData(() => {
 
 	.about-favorite-tools {
 		margin: 0 calc(var(--content-padding) * -1);
+	}
+
+	.about-site-source {
+		margin-top: 3rem;
 	}
 }
 </style>

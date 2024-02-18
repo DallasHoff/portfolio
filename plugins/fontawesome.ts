@@ -5,6 +5,8 @@ import {
 	faDisplayCode,
 	faNewspaper,
 	faEnvelope,
+	faBracketCurlyLeft,
+	faBracketCurlyRight,
 } from '@fortawesome/pro-light-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -15,6 +17,8 @@ library.add(
 	faDisplayCode,
 	faNewspaper,
 	faEnvelope,
+	faBracketCurlyLeft,
+	faBracketCurlyRight,
 );
 
 config.autoAddCss = false;
