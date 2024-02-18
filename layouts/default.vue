@@ -6,7 +6,7 @@ const { data: navbar } = await useAsyncData(() => {
 
 <template>
 	<div class="layout-default">
-		<app-navbar :links="navbar?.body"></app-navbar>
+		<app-navbar v-if="navbar" :links="navbar.links"></app-navbar>
 		<header class="layout-default__header">
 			<div class="layout-default__hero">
 				<slot name="hero"></slot>

@@ -26,9 +26,12 @@ const { data: favoriteTools } = await useAsyncData(() => {
 				<animation-triangle-snakes></animation-triangle-snakes>
 			</template>
 			<template #header>
-				<about-social-links :links="socialLinks?.body"></about-social-links>
+				<about-social-links
+					v-if="socialLinks"
+					:links="socialLinks.links"
+				></about-social-links>
 			</template>
-			<section class="page-about__section">
+			<section v-if="aboutMe" class="page-about__section">
 				<h2>About Me</h2>
 				<content-renderer
 					:value="aboutMe"
@@ -36,26 +39,26 @@ const { data: favoriteTools } = await useAsyncData(() => {
 					class="page-about__about-me"
 				></content-renderer>
 			</section>
-			<section class="page-about__section">
+			<section v-if="experience" class="page-about__section">
 				<h2>Experience</h2>
 				<div class="page-about__experience">
 					<about-experience-card
-						v-for="card of experience?.career"
+						v-for="card of experience.career"
 						v-bind="card"
 					></about-experience-card>
 				</div>
 			</section>
-			<section class="page-about__section">
+			<section v-if="favoriteTools" class="page-about__section">
 				<h2>Tools I Love</h2>
 				<about-favorite-tools
-					:tools="favoriteTools?.body"
+					:tools="favoriteTools.tools"
 				></about-favorite-tools>
 			</section>
-			<section class="page-about__section">
+			<section v-if="experience" class="page-about__section">
 				<h2>Education</h2>
 				<div class="page-about__experience">
 					<about-experience-card
-						v-for="card of experience?.education"
+						v-for="card of experience.education"
 						v-bind="card"
 					></about-experience-card>
 				</div>
