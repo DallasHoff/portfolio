@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const route = useRoute();
+const pageMeta = useState<PageMeta>('page-meta');
 
 const appName: string = 'Dallas Hoffman';
 const defaultDescription: string = 'I build applications for the web.';
@@ -14,12 +14,8 @@ const keywords: string[] = [
 ];
 
 const title = computed<string>(() => {
+	const titleSegs = [pageMeta.value.title, appName];
 	const delimiter = ' | ';
-	const titleSegs: string[] = [appName];
-
-	route.matched.forEach((routeLevel) => {
-		titleSegs.unshift(routeLevel.meta.title ?? '');
-	});
 
 	return titleSegs
 		.filter((seg, i, segs) => !!seg && seg !== segs[i + 1])
@@ -27,7 +23,7 @@ const title = computed<string>(() => {
 });
 
 const description = computed<string>(() => {
-	return route.meta.description ?? defaultDescription;
+	return pageMeta.value.description ?? defaultDescription;
 });
 
 useHead(() => ({

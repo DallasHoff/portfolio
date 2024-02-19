@@ -1,9 +1,5 @@
-declare module 'vue-router' {
-	interface PageMeta {
-		title?: string;
-		subtitle?: string;
-		description?: string;
-	}
-}
-
-export {};
+export type PageMeta = {
+	title?: string;
+	subtitle?: string;
+	description?: string;
+};

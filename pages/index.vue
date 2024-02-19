@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-definePageMeta({
+const pageMeta = useState<PageMeta>('page-meta');
+pageMeta.value = {
 	title: 'Dallas Hoffman',
 	subtitle: 'Web Application Developer in Orlando, FL',
-});
+};
 
 const yearsExperience = new Date().getFullYear() - 2017;
 const { data: socialLinks } = await useAsyncData(() => {

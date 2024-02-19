@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const pageMeta = useState<PageMeta>('page-meta');
+
 const { data: navbar } = await useAsyncData(() => {
 	return queryContent('/navbar').findOne();
 });
@@ -12,11 +14,11 @@ const { data: navbar } = await useAsyncData(() => {
 				<slot name="hero"></slot>
 			</div>
 			<div class="layout-default__content">
-				<h1 v-if="$route.meta.title" class="layout-default__title">
-					{{ $route.meta.title }}
+				<h1 v-if="pageMeta.title" class="layout-default__title">
+					{{ pageMeta.title }}
 				</h1>
-				<div v-if="$route.meta.subtitle" class="layout-default__subtitle">
-					{{ $route.meta.subtitle }}
+				<div v-if="pageMeta.subtitle" class="layout-default__subtitle">
+					{{ pageMeta.subtitle }}
 				</div>
 				<div v-if="$slots.header" class="layout-default__header-slot">
 					<slot name="header"></slot>

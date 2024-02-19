@@ -6,6 +6,9 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {},
 	},
+	imports: {
+		dirs: ['types'],
+	},
 	build: {
 		transpile: [
 			'@fortawesome/vue-fontawesome',
@@ -36,5 +39,8 @@ export default defineNuxtConfig({
 	lodash: {
 		prefix: '_',
 		upperAfterPrefix: false,
+	},
+	content: {
+		contentHead: false,
 	},
 });
