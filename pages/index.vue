@@ -4,7 +4,6 @@ usePageMeta({
 	subtitle: 'Web Application Developer in Orlando, FL',
 });
 
-const yearsExperience = new Date().getFullYear() - 2017;
 const { data: socialLinks } = await useContentFromPath('/about/social-links');
 const { data: aboutMe } = await useContentFromPath('/about/about-me');
 const { data: experience } = await useContentFromPath('/about/experience');
@@ -29,7 +28,6 @@ const { data: favoriteTools } = await useContentFromPath(
 				<h2>About Me</h2>
 				<content-renderer
 					:value="aboutMe"
-					:data="{ yearsExperience }"
 					class="page-about__about-me"
 				></content-renderer>
 			</section>
