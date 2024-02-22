@@ -1,9 +1,6 @@
 <script setup lang="ts">
-const pageMeta = useState<PageMeta>('page-meta');
-
-const { data: navbar } = await useAsyncData(() => {
-	return queryContent('/navbar').findOne();
-});
+const pageMeta = usePageMeta();
+const { data: navbar } = await useContentFromPath('/navbar');
 </script>
 
 <template>

@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-const pageMeta = useState<PageMeta>('page-meta');
-pageMeta.value = {
+usePageMeta({
 	title: 'Blog',
 	subtitle: 'By Dallas Hoffman',
-};
+});
 </script>
 
 <template>

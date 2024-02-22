@@ -1,23 +1,16 @@
 <script lang="ts" setup>
-const pageMeta = useState<PageMeta>('page-meta');
-pageMeta.value = {
+usePageMeta({
 	title: 'Dallas Hoffman',
 	subtitle: 'Web Application Developer in Orlando, FL',
-};
+});
 
 const yearsExperience = new Date().getFullYear() - 2017;
-const { data: socialLinks } = await useAsyncData(() => {
-	return queryContent('/about/social-links').findOne();
-});
-const { data: aboutMe } = await useAsyncData(() => {
-	return queryContent('/about/about-me').findOne();
-});
-const { data: experience } = await useAsyncData(() => {
-	return queryContent('/about/experience').findOne();
-});
-const { data: favoriteTools } = await useAsyncData(() => {
-	return queryContent('/about/favorite-tools').findOne();
-});
+const { data: socialLinks } = await useContentFromPath('/about/social-links');
+const { data: aboutMe } = await useContentFromPath('/about/about-me');
+const { data: experience } = await useContentFromPath('/about/experience');
+const { data: favoriteTools } = await useContentFromPath(
+	'/about/favorite-tools',
+);
 </script>
 
 <template>

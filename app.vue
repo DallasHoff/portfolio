@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const pageMeta = useState<PageMeta>('page-meta');
+const pageMeta = usePageMeta();
 
 const appName: string = 'Dallas Hoffman';
 const defaultDescription: string = 'I build applications for the web.';
