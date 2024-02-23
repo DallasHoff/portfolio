@@ -1,11 +1,19 @@
 <script setup lang="ts">
 const props = defineProps({
+	orientation: {
+		type: String as PropType<'horizontal' | 'vertical'>,
+		default: 'horizontal',
+	},
 	durationSeconds: { type: Number, default: 30 },
 	reversed: { type: Boolean, default: false },
 	fadeEdges: { type: Boolean, default: false },
 	pauseOnHover: { type: Boolean, default: false },
 });
 
+const contentDirection = computed(() =>
+	props.orientation === 'vertical' ? 'column' : 'row',
+);
+const animationName = computed(() => `app-marquee-${props.orientation}`);
 const animationDuration = computed(() => `${props.durationSeconds}s`);
 const animationDirection = computed(() =>
 	props.reversed ? 'reverse' : 'normal',
@@ -31,6 +39,7 @@ const animationFillMode = computed(() =>
 
 <style lang="scss">
 .app-marquee {
+	flex-shrink: 0;
 	overflow: hidden;
 
 	&--fade-edges {
@@ -45,8 +54,9 @@ const animationFillMode = computed(() =>
 
 	&__content {
 		display: flex;
+		flex-direction: v-bind(contentDirection);
 		width: fit-content;
-		animation-name: app-marquee;
+		animation-name: v-bind(animationName);
 		animation-timing-function: linear;
 		animation-iteration-count: infinite;
 		animation-fill-mode: v-bind(animationFillMode);
@@ -63,12 +73,21 @@ const animationFillMode = computed(() =>
 	}
 }
 
-@keyframes app-marquee {
+@keyframes app-marquee-horizontal {
 	0% {
 		transform: translateX(0);
 	}
 	100% {
 		transform: translateX(-50%);
+	}
+}
+
+@keyframes app-marquee-vertical {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-50%);
 	}
 }
 
