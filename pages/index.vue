@@ -65,11 +65,11 @@ const { data: favoriteTools } = await useContentFromPath(
 <style lang="scss">
 .page-about {
 	&__section {
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 
 		& > h2 {
 			text-align: center;
-			margin-bottom: 0.5rem;
+			margin-bottom: 1rem;
 		}
 	}
 

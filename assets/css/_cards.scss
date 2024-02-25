@@ -1,5 +1,6 @@
 @mixin solid-card {
-	padding: 1rem;
+	display: block;
+	padding: 1.2rem 1.8rem;
 	background-color: var(--solid-card-bg-color);
 	border: 1px solid var(--card-border-color);
 	border-radius: 0.5rem;
@@ -9,6 +10,7 @@
 }
 
 @mixin glassy-card {
+	display: block;
 	padding: 1rem;
 	background-color: var(--glassy-card-bg-color);
 	border: 1px solid var(--card-border-color);
@@ -20,6 +22,7 @@
 }
 
 @mixin glowy-card {
+	display: block;
 	position: relative;
 	padding: 1rem;
 	background: var(--bg-color-1);

@@ -23,7 +23,6 @@ defineProps({
 	@include cards.solid-card;
 	--card-glow-color: transparent;
 	font-size: 1rem;
-	padding: 1.2rem 1.8rem;
 	background-image: radial-gradient(
 		circle at 90% 100%,
 		color-mix(in srgb, var(--card-glow-color) 50%, transparent) 0%,
@@ -51,7 +50,6 @@ defineProps({
 
 	&__title {
 		font-size: 1.1em;
-		line-height: 1.4;
 		margin-bottom: 0.35em;
 	}
 

@@ -7,6 +7,8 @@ import {
 	faEnvelope,
 	faBracketCurlyLeft,
 	faBracketCurlyRight,
+	faCalendarPlus,
+	faCalendarPen,
 } from '@fortawesome/pro-light-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -19,6 +21,8 @@ library.add(
 	faEnvelope,
 	faBracketCurlyLeft,
 	faBracketCurlyRight,
+	faCalendarPlus,
+	faCalendarPen,
 );
 
 config.autoAddCss = false;

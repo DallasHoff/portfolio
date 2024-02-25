@@ -1,0 +1,20 @@
+{
+	"Vue Component": {
+		"prefix": "vue",
+		"scope": "vue",
+		"description": "Start a new Vue component",
+		"body": [
+			"<script setup lang=\"ts\">",
+			"$1",
+			"</script>",
+			"",
+			"<template>",
+			"$2",
+			"</template>",
+			"",
+			"<style scoped lang=\"scss\">",
+			"$3",
+			"</style>",
+		],
+	},
+}
