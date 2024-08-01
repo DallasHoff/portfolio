@@ -31,15 +31,6 @@ const { data: favoriteTools } = await useContentFromPath(
 					class="page-about__about-me"
 				></content-renderer>
 			</section>
-			<section v-if="experience" class="page-about__section">
-				<h2>Experience</h2>
-				<div class="page-about__experience">
-					<about-experience-card
-						v-for="card of experience.career"
-						v-bind="card"
-					></about-experience-card>
-				</div>
-			</section>
 			<section v-if="favoriteTools" class="page-about__section">
 				<h2>Tools I Love</h2>
 				<about-favorite-tools
@@ -47,10 +38,10 @@ const { data: favoriteTools } = await useContentFromPath(
 				></about-favorite-tools>
 			</section>
 			<section v-if="experience" class="page-about__section">
-				<h2>Education</h2>
+				<h2>Experience</h2>
 				<div class="page-about__experience">
 					<about-experience-card
-						v-for="card of experience.education"
+						v-for="card of experience.career"
 						v-bind="card"
 					></about-experience-card>
 				</div>
