@@ -96,7 +96,7 @@ const { data: navbar } = await useContentFromPath('/navbar');
 	&__main {
 		margin: 0 auto;
 		padding: var(--content-padding);
-		padding-bottom: calc(var(--content-padding) * 1.5);
+		padding-bottom: calc(var(--content-padding) * 2);
 		max-width: calc(var(--content-width) + (var(--content-padding) * 2));
 	}
 }

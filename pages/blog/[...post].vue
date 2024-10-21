@@ -66,5 +66,14 @@ usePageMeta({
 		align-items: center;
 		gap: 0.5em;
 	}
+
+	h2 {
+		margin: 1.5rem 0 0.5rem;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
 }
 </style>
