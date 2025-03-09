@@ -4,11 +4,6 @@
 			"label": "About Me",
 			"path": "/",
 			"icon": "fa-light fa-user-tie-hair"
-		},
-		{
-			"label": "Blog",
-			"path": "/blog",
-			"icon": "fa-light fa-newspaper"
 		}
 	]
 }
