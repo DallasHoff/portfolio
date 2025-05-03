@@ -13,7 +13,6 @@
     "dev": "nuxt dev",
     "build": "nuxt generate",
     "preview": "nuxt preview",
-    "deploy": "nuxt generate && firebase deploy",
     "format": "prettier . --write",
     "prepare": "nuxt prepare"
   },
