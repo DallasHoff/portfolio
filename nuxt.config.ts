@@ -21,7 +21,8 @@ export default defineNuxtConfig({
 		css: {
 			preprocessorOptions: {
 				scss: {
-					includePaths: ['./assets/css'],
+					api: 'modern-compiler',
+					loadPaths: ['./assets/css'],
 				},
 			},
 		},
