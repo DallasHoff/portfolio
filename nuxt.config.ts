@@ -4,17 +4,6 @@ export default defineNuxtConfig({
 	experimental: {
 		viewTransition: true,
 	},
-	imports: {
-		dirs: ['types'],
-	},
-	build: {
-		transpile: [
-			'@fortawesome/vue-fontawesome',
-			'@fortawesome/fontawesome-svg-core',
-			'@fortawesome/pro-light-svg-icons',
-			'@fortawesome/free-brands-svg-icons',
-		],
-	},
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -25,18 +14,39 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-	css: [
-		'@fortawesome/fontawesome-svg-core/styles.css',
-		'@/assets/css/app.scss',
-	],
+	css: ['~/assets/css/app.scss'],
 	typescript: {
 		strict: true,
 		typeCheck: true,
 		shim: false,
 	},
-	modules: ['@nuxt/image', 'nuxt-lodash', '@vueuse/nuxt'],
+	modules: [
+		'@nuxt/image',
+		'nuxt-lodash',
+		'@vueuse/nuxt',
+		'@vesp/nuxt-fontawesome',
+	],
 	lodash: {
 		prefix: '_',
 		upperAfterPrefix: false,
+	},
+	fontawesome: {
+		component: 'fa',
+		suffix: true,
+		icons: {
+			brands: ['faLinkedin', 'faGithub'],
+		},
+		proIcons: {
+			light: [
+				'faUserTieHair',
+				'faDisplayCode',
+				'faNewspaper',
+				'faEnvelope',
+				'faBracketCurlyLeft',
+				'faBracketCurlyRight',
+				'faCalendarPlus',
+				'faCalendarPen',
+			],
+		},
 	},
 });
