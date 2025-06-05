@@ -21,7 +21,8 @@ defineProps({
 	justify-content: center;
 	font-weight: 700;
 	color: white;
-	background-image: radial-gradient(
+	background-image:
+		radial-gradient(
 			circle farthest-side at 35% 5%,
 			rgba(60, 230, 182, 0.8) 0%,
 			rgba(0, 0, 0, 0) 100%
