@@ -1,15 +1,12 @@
 <script lang="ts" setup>
+import socialLinks from '~/data/about/social-links.json';
+import favoriteTools from '~/data/about/favorite-tools.json';
+import experience from '~/data/about/experience.json';
+
 usePageMeta({
 	title: 'Dallas Hoffman',
 	subtitle: 'Web Application Developer in Orlando, FL',
 });
-
-const { data: socialLinks } = await useContentFromPath('/about/social-links');
-const { data: aboutMe } = await useContentFromPath('/about/about-me');
-const { data: experience } = await useContentFromPath('/about/experience');
-const { data: favoriteTools } = await useContentFromPath(
-	'/about/favorite-tools',
-);
 </script>
 
 <template>
@@ -19,25 +16,27 @@ const { data: favoriteTools } = await useContentFromPath(
 				<animation-triangle-snakes></animation-triangle-snakes>
 			</template>
 			<template #header>
-				<about-social-links
-					v-if="socialLinks"
-					:links="socialLinks.links"
-				></about-social-links>
+				<about-social-links :links="socialLinks.links"></about-social-links>
 			</template>
-			<section v-if="aboutMe" class="page-about__section">
+			<section class="page-about__section">
 				<h2>About Me</h2>
-				<content-renderer
-					:value="aboutMe"
-					class="page-about__about-me"
-				></content-renderer>
+				<p class="page-about__about-me">
+					Skilled at learning new concepts quickly, planning ahead, and creative
+					thinking, I am a self-starter that loves to stay up to date on the
+					newest technologies and put them to use. I have been working in web
+					programming for over <about-years-experience /> years, learning,
+					building, and competing all the way. I am especially experienced with
+					JavaScript/TypeScript and developing interactive and user-friendly
+					interfaces.
+				</p>
 			</section>
-			<section v-if="favoriteTools" class="page-about__section">
+			<section class="page-about__section">
 				<h2>Tools I Love</h2>
 				<about-favorite-tools
 					:tools="favoriteTools.tools"
 				></about-favorite-tools>
 			</section>
-			<section v-if="experience" class="page-about__section">
+			<section class="page-about__section">
 				<h2>Experience</h2>
 				<div class="page-about__experience">
 					<about-experience-card

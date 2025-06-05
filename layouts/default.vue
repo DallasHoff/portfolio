@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import navbar from '~/data/navbar.json';
+
 const pageMeta = usePageMeta();
-const { data: navbar } = await useContentFromPath('/navbar');
 </script>
 
 <template>

@@ -1,10 +1,8 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+	compatibilityDate: '2025-06-05',
 	experimental: {
 		viewTransition: true,
-	},
-	runtimeConfig: {
-		public: {},
 	},
 	imports: {
 		dirs: ['types'],
@@ -36,12 +34,9 @@ export default defineNuxtConfig({
 		typeCheck: true,
 		shim: false,
 	},
-	modules: ['@nuxt/image', 'nuxt-lodash', '@vueuse/nuxt', '@nuxt/content'],
+	modules: ['@nuxt/image', 'nuxt-lodash', '@vueuse/nuxt'],
 	lodash: {
 		prefix: '_',
 		upperAfterPrefix: false,
-	},
-	content: {
-		contentHead: false,
 	},
 });
