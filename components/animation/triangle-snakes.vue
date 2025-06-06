@@ -2,6 +2,7 @@
 export default {
 	data() {
 		return {
+			resizeObserver: null,
 			// Settings
 			frameDuration: 100,
 			paused: false,
@@ -285,11 +286,11 @@ export default {
 	},
 	mounted() {
 		// Set up state
-		const resizeObserver = new ResizeObserver((entries) => {
+		this.resizeObserver = new ResizeObserver((entries) => {
 			const { offsetWidth, offsetHeight } = entries[0].target;
 			this.resize(offsetWidth, offsetHeight);
 		});
-		resizeObserver.observe(this.$refs.container);
+		this.resizeObserver.observe(this.$refs.container);
 		// Draw
 		if (window.matchMedia('(prefers-reduced-motion)').matches) {
 			// Render static image
@@ -299,6 +300,9 @@ export default {
 			// Start animation
 			window.requestAnimationFrame(this.drawFrame);
 		}
+	},
+	unmounted() {
+		this.resizeObserver?.disconnect();
 	},
 };
 </script>
