@@ -3,6 +3,7 @@ export default defineNuxtConfig({
 	compatibilityDate: '2025-06-05',
 	experimental: {
 		viewTransition: true,
+		defaults: { nuxtLink: { trailingSlash: 'append' } },
 	},
 	vite: {
 		css: {
@@ -46,6 +47,9 @@ export default defineNuxtConfig({
 				'faBracketCurlyRight',
 				'faCalendarPlus',
 				'faCalendarPen',
+				'faImage',
+				'faLeft',
+				'faRight',
 			],
 		},
 	},

@@ -9,6 +9,13 @@ const pageMeta = usePageMeta();
 		<app-navbar :links="navbarLinks"></app-navbar>
 		<header class="layout-default__header">
 			<div class="layout-default__hero">
+				<nuxt-img
+					v-if="pageMeta.coverPhotoPath"
+					:src="pageMeta.coverPhotoPath"
+					alt=""
+					height="480"
+					class="layout-default__hero-img"
+				></nuxt-img>
 				<slot name="hero"></slot>
 			</div>
 			<div class="layout-default__content">
@@ -54,6 +61,13 @@ const pageMeta = usePageMeta();
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
+	}
+
+	&__hero-img {
+		display: block;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
 	}
 
 	&__content {

@@ -1,21 +1,32 @@
 <script setup lang="ts">
 const props = defineProps({
-	path: { type: String },
-	title: { type: String },
+	path: { type: String, required: true },
+	title: { type: String, required: true },
 	subtitle: { type: String },
 	description: { type: String },
 	image: { type: String },
 });
 
-const bgUrl = computed(() => `url(${props.image})`);
+const img = useImage();
+const bgUrl = computed(() => {
+	if (!props.image) return '';
+	const imgUrl = img(props.image, { width: 800 });
+	return `url(${imgUrl})`;
+});
 </script>
 
 <template>
 	<nuxt-link :to="path" class="app-article-card">
 		<div class="app-article-card__content">
-			<h3 class="app-article-card__title">{{ title }}</h3>
-			<div class="app-article-card__subtitle">{{ subtitle }}</div>
-			<p class="app-article-card__description">{{ description }}</p>
+			<h3 class="app-article-card__title">
+				{{ title }}
+			</h3>
+			<div v-if="subtitle" class="app-article-card__subtitle">
+				{{ subtitle }}
+			</div>
+			<p v-if="description" class="app-article-card__description">
+				{{ description }}
+			</p>
 		</div>
 	</nuxt-link>
 </template>
@@ -29,6 +40,7 @@ const bgUrl = computed(() => `url(${props.image})`);
 	font-size: 1rem;
 	color: inherit;
 	text-decoration: none;
+	overflow: hidden;
 
 	&::before {
 		content: '';
@@ -36,7 +48,8 @@ const bgUrl = computed(() => `url(${props.image})`);
 		right: 0;
 		top: 0;
 		bottom: 0;
-		width: 40%;
+		width: 60%;
+		max-width: 400px;
 		background-image: v-bind(bgUrl);
 		background-repeat: no-repeat;
 		background-size: cover;
