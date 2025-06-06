@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import navbar from '~/data/navbar.json';
+import { navbarLinks } from '~/data/navbar-links';
 
 const pageMeta = usePageMeta();
 </script>
 
 <template>
 	<div class="layout-default">
-		<app-navbar v-if="navbar" :links="navbar.links"></app-navbar>
+		<app-navbar :links="navbarLinks"></app-navbar>
 		<header class="layout-default__header">
 			<div class="layout-default__hero">
 				<slot name="hero"></slot>

@@ -1,7 +1,9 @@
 <script setup lang="ts">
+export type FavoriteTool = { label: string; icon: string };
+
 const props = defineProps({
 	tools: {
-		type: Array as PropType<{ label: string; icon: string }[]>,
+		type: Array as PropType<FavoriteTool[]>,
 		required: true,
 	},
 });

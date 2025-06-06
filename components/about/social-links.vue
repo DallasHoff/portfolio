@@ -1,7 +1,9 @@
 <script setup lang="ts">
+export type SocialLink = { label: string; icon: string; url: string };
+
 defineProps({
 	links: {
-		type: Array as PropType<{ label: string; icon: string; url: string }[]>,
+		type: Array as PropType<SocialLink[]>,
 		required: true,
 	},
 });

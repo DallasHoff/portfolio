@@ -1,18 +1,25 @@
 <script setup lang="ts">
+export type ExperienceInfo = {
+	title: string;
+	years: string;
+	subtitle: string;
+	description: string;
+};
+
 defineProps({
-	years: { type: String },
-	title: { type: String },
-	subtitle: { type: String },
-	description: { type: String },
+	info: {
+		type: Object as PropType<ExperienceInfo>,
+		required: true,
+	},
 });
 </script>
 
 <template>
 	<div class="about-experience-card">
-		<div class="about-experience-card__years">{{ years }}</div>
-		<h3 class="about-experience-card__title">{{ title }}</h3>
-		<div class="about-experience-card__subtitle">{{ subtitle }}</div>
-		<p class="about-experience-card__description">{{ description }}</p>
+		<div class="about-experience-card__years">{{ info.years }}</div>
+		<h3 class="about-experience-card__title">{{ info.title }}</h3>
+		<div class="about-experience-card__subtitle">{{ info.subtitle }}</div>
+		<p class="about-experience-card__description">{{ info.description }}</p>
 	</div>
 </template>
 

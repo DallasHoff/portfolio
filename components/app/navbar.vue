@@ -1,7 +1,9 @@
 <script setup lang="ts">
+export type NavbarLink = { label: string; icon: string; path: string };
+
 defineProps({
 	links: {
-		type: Array as PropType<{ label: string; icon: string; path: string }[]>,
+		type: Array as PropType<NavbarLink[]>,
 		required: true,
 	},
 });

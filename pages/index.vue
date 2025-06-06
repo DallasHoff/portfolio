@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import socialLinks from '~/data/about/social-links.json';
-import favoriteTools from '~/data/about/favorite-tools.json';
-import experience from '~/data/about/experience.json';
+import { careerExperience } from '~/data/about/experience';
+import { favoriteTools } from '~/data/about/favorite-tools';
+import { socialLinks } from '~/data/about/social-links';
 
 usePageMeta({
 	title: 'Dallas Hoffman',
@@ -16,7 +16,7 @@ usePageMeta({
 				<animation-triangle-snakes></animation-triangle-snakes>
 			</template>
 			<template #header>
-				<about-social-links :links="socialLinks.links"></about-social-links>
+				<about-social-links :links="socialLinks"></about-social-links>
 			</template>
 			<section class="page-about__section">
 				<h2>About Me</h2>
@@ -32,16 +32,14 @@ usePageMeta({
 			</section>
 			<section class="page-about__section">
 				<h2>Tools I Love</h2>
-				<about-favorite-tools
-					:tools="favoriteTools.tools"
-				></about-favorite-tools>
+				<about-favorite-tools :tools="favoriteTools"></about-favorite-tools>
 			</section>
 			<section class="page-about__section">
 				<h2>Experience</h2>
 				<div class="page-about__experience">
 					<about-experience-card
-						v-for="card of experience.career"
-						v-bind="card"
+						v-for="experience of careerExperience"
+						:info="experience"
 					></about-experience-card>
 				</div>
 			</section>
