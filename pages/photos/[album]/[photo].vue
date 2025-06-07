@@ -11,13 +11,12 @@ const photoIndex = computed(() => {
 	return album.photos.findIndex((p) => p === photo.value);
 });
 const prevPhotoPath = computed(() => {
-	const photo = album.photos[photoIndex.value - 1];
-	if (!photo) return null;
+	const photo =
+		album.photos[photoIndex.value - 1] ?? album.photos[album.photos.length - 1];
 	return getPhotoPath(photo);
 });
 const nextPhotoPath = computed(() => {
-	const photo = album.photos[photoIndex.value + 1];
-	if (!photo) return null;
+	const photo = album.photos[photoIndex.value + 1] ?? album.photos[0];
 	return getPhotoPath(photo);
 });
 
@@ -30,11 +29,7 @@ usePageMeta({
 	<div class="page-photos-photo">
 		<nuxt-layout name="empty">
 			<div class="page-photos-photo__nav">
-				<nuxt-link
-					:to="prevPhotoPath ?? ''"
-					class="page-photos-photo__nav-button"
-					:class="{ 'page-photos-photo__nav-button--disabled': !prevPhotoPath }"
-				>
+				<nuxt-link :to="prevPhotoPath" class="page-photos-photo__nav-button">
 					<fa-icon icon="fa-light fa-left"></fa-icon>
 					Prev
 				</nuxt-link>
@@ -44,11 +39,7 @@ usePageMeta({
 				>
 					Album
 				</nuxt-link>
-				<nuxt-link
-					:to="nextPhotoPath ?? ''"
-					class="page-photos-photo__nav-button"
-					:class="{ 'page-photos-photo__nav-button--disabled': !nextPhotoPath }"
-				>
+				<nuxt-link :to="nextPhotoPath" class="page-photos-photo__nav-button">
 					Next
 					<fa-icon icon="fa-light fa-right"></fa-icon>
 				</nuxt-link>
@@ -96,11 +87,6 @@ usePageMeta({
 		&--album {
 			order: -1;
 			flex-basis: 100%;
-		}
-
-		&--disabled {
-			pointer-events: none;
-			opacity: 0.5;
 		}
 	}
 
