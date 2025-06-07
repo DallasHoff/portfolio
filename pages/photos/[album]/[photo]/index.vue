@@ -1,9 +1,7 @@
 <script setup lang="ts">
 const {
 	routePhoto: photo,
-	getPhotoSrc,
 	getPhotoPath,
-	getPhotoId,
 	routePhotoRatioX,
 	routePhotoRatioY,
 } = await usePhotoAlbum();
@@ -22,18 +20,7 @@ usePageMeta({
 				:to="`${getPhotoPath(photo)}/full`"
 				class="page-photos-photo__img-container"
 			>
-				<nuxt-img
-					:src="getPhotoSrc(photo)"
-					:alt="photo.title"
-					:width="photo.width"
-					:height="photo.height"
-					densities="1x 2x"
-					:placeholder="[routePhotoRatioX * 2, routePhotoRatioY * 2]"
-					format="auto"
-					provider="cloudflare"
-					class="page-photos-photo__img"
-					:style="{ 'view-transition-name': getPhotoId(photo) }"
-				></nuxt-img>
+				<photos-route-img class="page-photos-photo__img" />
 			</nuxt-link>
 		</nuxt-layout>
 	</div>
