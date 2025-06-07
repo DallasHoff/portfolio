@@ -2,8 +2,8 @@
 const {
 	routePhoto: photo,
 	getPhotoSrc,
-	getPhotoId,
 	getPhotoPath,
+	getPhotoId,
 	routePhotoRatioX,
 	routePhotoRatioY,
 } = await usePhotoAlbum();
