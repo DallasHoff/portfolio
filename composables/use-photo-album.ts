@@ -13,7 +13,7 @@ export async function usePhotoAlbum() {
 	};
 
 	const getPhotoPath = (photo: Photo) => {
-		return `/photos/${album.slug}/${_kebabCase(photo.title)}`;
+		return `/photos/${album.slug}/${_kebabCase(photo.title)}/`;
 	};
 
 	const getPhotoId = (photo: Photo) => {

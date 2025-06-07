@@ -38,6 +38,7 @@ const { prevPhotoPath, nextPhotoPath } = await usePhotoAlbum();
 		color: var(--text-color-1);
 		filter: drop-shadow(0 0 16px black);
 		pointer-events: auto;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	&__spacer {

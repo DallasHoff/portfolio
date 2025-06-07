@@ -1,12 +1,41 @@
 <script setup lang="ts">
 const {
 	routePhoto: photo,
-	getPhotoPath,
 	routePhotoRatioX,
 	routePhotoRatioY,
+	prevPhotoPath,
+	nextPhotoPath,
 } = await usePhotoAlbum();
 
 const { idle } = useIdle(2000);
+
+const swipeEl = useTemplateRef('swipe-el');
+const navigatingDirection = ref<'left' | 'right' | null>(null);
+const { isSwiping, lengthX } = useSwipe(swipeEl, {
+	async onSwipeEnd(_, direction) {
+		let path = direction === 'left' ? nextPhotoPath.value : null;
+		path ??= direction === 'right' ? prevPhotoPath.value : null;
+		if (!path || (direction !== 'left' && direction !== 'right')) return;
+
+		navigatingDirection.value = direction;
+		await new Promise((res) => setTimeout(res, 200));
+		await navigateTo(path);
+		navigatingDirection.value = null;
+	},
+});
+
+const translate = computed(() => {
+	let x = '0';
+	const dir = navigatingDirection.value;
+
+	if (isSwiping.value) {
+		x = `${-lengthX.value}px`;
+	} else if (dir) {
+		x = dir === 'left' ? '-100%' : '100%';
+	}
+
+	return `${x} 0`;
+});
 
 usePageMeta({
 	title: photo.value?.title,
@@ -16,9 +45,15 @@ usePageMeta({
 <template>
 	<div class="page-photos-photo">
 		<nuxt-layout name="empty">
-			<nuxt-link v-if="photo" to="../" class="page-photos-photo__container">
-				<photos-route-img class="page-photos-photo__img" />
-			</nuxt-link>
+			<div ref="swipe-el">
+				<nuxt-link to="../" class="page-photos-photo__container">
+					<photos-route-img
+						class="page-photos-photo__img"
+						:class="{ 'page-photos-photo__img--swiping': isSwiping }"
+						:style="{ translate }"
+					></photos-route-img>
+				</nuxt-link>
+			</div>
 			<transition-fade>
 				<photos-overlay-nav v-if="!idle" />
 			</transition-fade>
@@ -48,6 +83,11 @@ usePageMeta({
 		max-width: calc((100vh) * (var(--photo-ratio-x) / var(--photo-ratio-y)));
 		height: auto;
 		margin: auto;
+		transition: translate 200ms;
+
+		&--swiping {
+			transition: none;
+		}
 	}
 }
 </style>
