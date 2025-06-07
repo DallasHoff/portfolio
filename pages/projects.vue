@@ -9,7 +9,7 @@ usePageMeta({
 	<div class="page-projects">
 		<nuxt-layout>
 			<template #hero>
-				<animation-game-of-life></animation-game-of-life>
+				<animation-game-of-life />
 			</template>
 			<p class="page-projects__soon">More soon&hellip;</p>
 		</nuxt-layout>

@@ -39,6 +39,7 @@ const { prevPhotoPath, nextPhotoPath } = await usePhotoAlbum();
 		display: flex;
 		align-items: center;
 		gap: 0.5em;
+		background-color: var(--bg-color-4);
 
 		&--album {
 			order: -1;

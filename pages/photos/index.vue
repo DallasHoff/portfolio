@@ -11,7 +11,7 @@ usePageMeta({
 	<div class="page-photos">
 		<nuxt-layout>
 			<template #hero>
-				<animation-spinning-arcs></animation-spinning-arcs>
+				<animation-spinning-arcs />
 			</template>
 			<ul class="page-photos__albums">
 				<li>

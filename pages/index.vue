@@ -13,10 +13,10 @@ usePageMeta({
 	<div class="page-about">
 		<nuxt-layout>
 			<template #hero>
-				<animation-triangle-snakes></animation-triangle-snakes>
+				<animation-triangle-snakes />
 			</template>
 			<template #header>
-				<about-social-links :links="socialLinks"></about-social-links>
+				<about-social-links :links="socialLinks" />
 			</template>
 			<section class="page-about__section">
 				<h2>About Me</h2>
@@ -32,7 +32,7 @@ usePageMeta({
 			</section>
 			<section class="page-about__section">
 				<h2>Tools I Love</h2>
-				<about-favorite-tools :tools="favoriteTools"></about-favorite-tools>
+				<about-favorite-tools :tools="favoriteTools" />
 			</section>
 			<section class="page-about__section">
 				<h2>Experience</h2>
@@ -44,7 +44,7 @@ usePageMeta({
 				</div>
 			</section>
 			<section class="page-about__section">
-				<about-site-source></about-site-source>
+				<about-site-source />
 			</section>
 		</nuxt-layout>
 	</div>

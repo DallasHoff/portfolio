@@ -6,6 +6,8 @@ const {
 	routePhotoRatioY,
 } = await usePhotoAlbum();
 
+const { idle } = useIdle(2000);
+
 usePageMeta({
 	title: photo.value?.title,
 });
@@ -21,6 +23,9 @@ usePageMeta({
 			>
 				<photos-route-img class="page-photos-photo-full__img" />
 			</nuxt-link>
+			<transition-fade>
+				<photos-overlay-nav v-if="!idle" />
+			</transition-fade>
 		</nuxt-layout>
 	</div>
 </template>
