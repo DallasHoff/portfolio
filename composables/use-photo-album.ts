@@ -34,6 +34,12 @@ export async function usePhotoAlbum() {
 		return photo ?? null;
 	});
 
+	const routePhotoIndex = computed(() => {
+		return album.photos.findIndex((photo) => photo === routePhoto.value);
+	});
+	const routePhotoRatioX = computed(() => routePhoto.value?.ratio[0] ?? 1);
+	const routePhotoRatioY = computed(() => routePhoto.value?.ratio[1] ?? 1);
+
 	return {
 		album,
 		getPhotoSrc,
@@ -41,5 +47,8 @@ export async function usePhotoAlbum() {
 		getPhotoId,
 		coverPhotoPath,
 		routePhoto,
+		routePhotoIndex,
+		routePhotoRatioX,
+		routePhotoRatioY,
 	};
 }

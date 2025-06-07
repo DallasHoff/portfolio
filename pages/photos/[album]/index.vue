@@ -50,6 +50,7 @@ usePageMeta({
 	}
 
 	&__img {
+		view-transition-class: album-photo;
 		display: block;
 		object-fit: cover;
 		width: 100%;
