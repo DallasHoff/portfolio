@@ -14,6 +14,10 @@ const pageMeta = usePageMeta();
 					:src="pageMeta.coverPhotoPath"
 					alt=""
 					height="480"
+					densities="1x 2x"
+					placeholder
+					format="auto"
+					provider="cloudflare"
 					class="layout-default__hero-img"
 				></nuxt-img>
 				<slot name="hero"></slot>

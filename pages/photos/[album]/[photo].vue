@@ -57,6 +57,12 @@ usePageMeta({
 				v-if="photo"
 				:src="getPhotoSrc(photo)"
 				:alt="photo.title"
+				:width="photo.width"
+				:height="photo.height"
+				densities="1x 2x"
+				:placeholder="[photo.ratio[0] * 2, photo.ratio[1] * 2]"
+				format="auto"
+				provider="cloudflare"
 				class="page-photos-photo__img"
 				:style="{ 'view-transition-name': getPhotoId(photo) }"
 			></nuxt-img>
@@ -101,7 +107,7 @@ usePageMeta({
 	&__img {
 		display: block;
 		width: 100%;
-		max-width: calc(80vh * (4 / 3));
+		max-width: calc((100vh - 10rem) * (4 / 3));
 		height: auto;
 		margin: 0 auto;
 	}

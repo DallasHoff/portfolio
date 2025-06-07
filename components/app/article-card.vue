@@ -10,7 +10,11 @@ const props = defineProps({
 const img = useImage();
 const bgUrl = computed(() => {
 	if (!props.image) return '';
-	const imgUrl = img(props.image, { width: 800 });
+	const imgUrl = img(
+		props.image,
+		{ width: 800, format: 'auto' },
+		{ provider: 'cloudflare', densities: '1x 2x' },
+	);
 	return `url(${imgUrl})`;
 });
 </script>

@@ -27,6 +27,11 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'@vesp/nuxt-fontawesome',
 	],
+	image: {
+		cloudflare: {
+			baseURL: 'https://dallashoffman.com',
+		},
+	},
 	lodash: {
 		prefix: '_',
 		upperAfterPrefix: false,

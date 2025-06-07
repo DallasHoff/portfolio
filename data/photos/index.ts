@@ -15,4 +15,7 @@ export type Album = {
 export type Photo = {
 	title: string;
 	path: string;
+	width: number;
+	height: number;
+	ratio: [width: number, height: number];
 };

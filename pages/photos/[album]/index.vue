@@ -18,7 +18,12 @@ usePageMeta({
 						<nuxt-img
 							:src="getPhotoSrc(photo)"
 							:alt="photo.title"
+							loading="lazy"
 							width="300"
+							densities="1x 2x"
+							:placeholder="[photo.ratio[0] * 2, photo.ratio[1] * 2]"
+							format="auto"
+							provider="cloudflare"
 							class="page-photos-album__img"
 							:style="{ 'view-transition-name': getPhotoId(photo) }"
 						></nuxt-img>
