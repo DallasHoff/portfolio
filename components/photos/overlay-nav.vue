@@ -5,7 +5,7 @@ const { prevPhotoPath, nextPhotoPath } = await usePhotoAlbum();
 <template>
 	<nav aria-label="Photo album navigation" class="photos-overlay-nav">
 		<nuxt-link
-			:to="`${prevPhotoPath}/full`"
+			:to="prevPhotoPath"
 			class="photos-overlay-nav__button photos-overlay-nav__button--left"
 			aria-label="Previous"
 		>
@@ -13,7 +13,7 @@ const { prevPhotoPath, nextPhotoPath } = await usePhotoAlbum();
 		</nuxt-link>
 		<div class="photos-overlay-nav__spacer"></div>
 		<nuxt-link
-			:to="`${nextPhotoPath}/full`"
+			:to="nextPhotoPath"
 			class="photos-overlay-nav__button photos-overlay-nav__button--right"
 			aria-label="Next"
 		>

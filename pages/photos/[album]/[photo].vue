@@ -14,14 +14,10 @@ usePageMeta({
 </script>
 
 <template>
-	<div class="page-photos-photo-full">
+	<div class="page-photos-photo">
 		<nuxt-layout name="empty">
-			<nuxt-link
-				v-if="photo"
-				:to="getPhotoPath(photo)"
-				class="page-photos-photo-full__container"
-			>
-				<photos-route-img class="page-photos-photo-full__img" />
+			<nuxt-link v-if="photo" to="../" class="page-photos-photo__container">
+				<photos-route-img class="page-photos-photo__img" />
 			</nuxt-link>
 			<transition-fade>
 				<photos-overlay-nav v-if="!idle" />
@@ -31,12 +27,12 @@ usePageMeta({
 </template>
 
 <style lang="scss">
-.page-photos-photo-full {
+.page-photos-photo {
 	--photo-ratio-x: v-bind(routePhotoRatioX);
 	--photo-ratio-y: v-bind(routePhotoRatioY);
 
 	&__container {
-		view-transition-name: page-photos-photo-full__container;
+		view-transition-name: page-photos-photo__container;
 		display: flex;
 		align-items: center;
 		justify-content: center;
