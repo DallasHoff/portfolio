@@ -45,6 +45,7 @@ usePageMeta({
 
 	&__photo {
 		display: block;
+		aspect-ratio: 4 / 3;
 		border-radius: 0.5rem;
 		overflow: hidden;
 	}
