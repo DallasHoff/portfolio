@@ -7,7 +7,13 @@ const {
 	nextPhotoPath,
 } = await usePhotoAlbum();
 
+usePageMeta({
+	title: photo.value?.title,
+});
+
+const hoveringNav = ref<boolean>(false);
 const { idle } = useIdle(2000);
+const showNav = computed(() => hoveringNav.value || !idle.value);
 
 const swipeEl = useTemplateRef('swipe-el');
 const navigatingDirection = ref<'left' | 'right' | null>(null);
@@ -36,10 +42,6 @@ const translate = computed(() => {
 
 	return `${x} 0`;
 });
-
-usePageMeta({
-	title: photo.value?.title,
-});
 </script>
 
 <template>
@@ -55,7 +57,11 @@ usePageMeta({
 				</nuxt-link>
 			</div>
 			<transition-fade>
-				<photos-overlay-nav v-if="!idle" />
+				<photos-overlay-nav
+					v-if="showNav"
+					@pointerenter="hoveringNav = true"
+					@pointerleave="hoveringNav = false"
+				></photos-overlay-nav>
 			</transition-fade>
 		</nuxt-layout>
 	</div>
