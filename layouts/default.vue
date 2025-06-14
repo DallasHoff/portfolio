@@ -13,7 +13,7 @@ const pageMeta = usePageMeta();
 					v-if="pageMeta.coverPhotoPath"
 					:src="pageMeta.coverPhotoPath"
 					alt=""
-					height="480"
+					sizes="320px xs:640px sm:1024px lg:1280px xl:1536px 2xl:2016px"
 					densities="1x 2x"
 					placeholder
 					format="auto"
