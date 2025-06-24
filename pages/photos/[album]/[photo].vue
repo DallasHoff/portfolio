@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { UseSwipeDirection } from '@vueuse/core';
+
 const {
 	routePhoto: photo,
 	routePhotoRatioX,
@@ -17,18 +19,26 @@ const showNav = computed(() => hoveringNav.value || !idle.value);
 
 const swipeEl = useTemplateRef('swipe-el');
 const navigatingDirection = ref<'left' | 'right' | null>(null);
-const { isSwiping, lengthX } = useSwipe(swipeEl, {
-	async onSwipeEnd(_, direction) {
-		let path = direction === 'left' ? nextPhotoPath.value : null;
-		path ??= direction === 'right' ? prevPhotoPath.value : null;
-		if (!path || (direction !== 'left' && direction !== 'right')) return;
 
-		navigatingDirection.value = direction;
-		await new Promise((res) => setTimeout(res, 200));
-		await navigateTo(path);
-		navigatingDirection.value = null;
+const { isSwiping, lengthX } = useSwipe(swipeEl, {
+	onSwipeEnd(_, direction) {
+		swipePhoto(direction);
 	},
 });
+
+onKeyStroke('ArrowLeft', () => swipePhoto('right'));
+onKeyStroke('ArrowRight', () => swipePhoto('left'));
+
+async function swipePhoto(direction: UseSwipeDirection) {
+	let path = direction === 'left' ? nextPhotoPath.value : null;
+	path ??= direction === 'right' ? prevPhotoPath.value : null;
+	if (!path || (direction !== 'left' && direction !== 'right')) return;
+
+	navigatingDirection.value = direction;
+	await new Promise((res) => setTimeout(res, 200));
+	await navigateTo(path);
+	navigatingDirection.value = null;
+}
 
 const translate = computed(() => {
 	let x = '0';
@@ -37,7 +47,7 @@ const translate = computed(() => {
 	if (isSwiping.value) {
 		x = `${-lengthX.value}px`;
 	} else if (dir) {
-		x = dir === 'left' ? '-100%' : '100%';
+		x = dir === 'left' ? '-100vw' : '100vw';
 	}
 
 	return `${x} 0`;

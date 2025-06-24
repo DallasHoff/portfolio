@@ -19,6 +19,7 @@ const {
 		:placeholder="[routePhotoRatioX * 2, routePhotoRatioY * 2]"
 		format="auto"
 		provider="cloudflare"
+		preload
 		class="photos-route-img"
 		:style="{ 'view-transition-name': getPhotoId(photo) }"
 	/>
