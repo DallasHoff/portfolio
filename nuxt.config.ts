@@ -55,6 +55,7 @@ export default defineNuxtConfig({
 				'faImage',
 				'faLeft',
 				'faRight',
+				'faLoader',
 			],
 		},
 	},

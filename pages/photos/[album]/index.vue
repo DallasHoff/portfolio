@@ -14,7 +14,11 @@ usePageMeta({
 		<nuxt-layout>
 			<ul class="page-photos-album__photos">
 				<li v-for="photo of album.photos">
-					<nuxt-link :to="getPhotoPath(photo)" class="page-photos-album__photo">
+					<nuxt-link
+						:to="getPhotoPath(photo)"
+						class="page-photos-album__photo"
+						:style="{ 'view-transition-name': getPhotoId(photo) }"
+					>
 						<nuxt-img
 							:src="getPhotoSrc(photo)"
 							:alt="photo.title"
@@ -25,7 +29,6 @@ usePageMeta({
 							format="auto"
 							provider="cloudflare"
 							class="page-photos-album__img"
-							:style="{ 'view-transition-name': getPhotoId(photo) }"
 						></nuxt-img>
 					</nuxt-link>
 				</li>
