@@ -14,9 +14,8 @@ usePageMeta({
 				<animation-spinning-arcs />
 			</template>
 			<ul class="page-photos__albums">
-				<li>
+				<li v-for="album of albums">
 					<app-article-card
-						v-for="album of albums"
 						:path="`/photos/${album.slug}`"
 						:title="album.title"
 						:subtitle="album.subtitle"

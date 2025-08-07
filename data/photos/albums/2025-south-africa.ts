@@ -7,6 +7,13 @@ export const album: Album = {
 	coverPhotoPath: 'landscapes/IMG_4186.jpeg',
 	photos: [
 		{
+			title: 'Mountain Sunrise',
+			path: 'landscapes/IMG_4186.jpeg',
+			width: 4032,
+			height: 3024,
+			ratio: [4, 3],
+		},
+		{
 			title: 'Sunset Pond Reflection',
 			path: 'landscapes/IMG_4236.jpeg',
 			width: 4032,
@@ -23,13 +30,6 @@ export const album: Album = {
 		{
 			title: 'African Brush',
 			path: 'landscapes/IMG_4195.jpeg',
-			width: 4032,
-			height: 3024,
-			ratio: [4, 3],
-		},
-		{
-			title: 'Mountain Sunrise',
-			path: 'landscapes/IMG_4186.jpeg',
 			width: 4032,
 			height: 3024,
 			ratio: [4, 3],

@@ -73,7 +73,7 @@ for (let imgPath of imgPaths) {
 	const dimensions = await imageSizeFromFile(imgPathFull);
 
 	album.photos.push({
-		title: '',
+		title: imgPath.split('.')[0],
 		path: imgPath,
 		width: dimensions.width,
 		height: dimensions.height,
