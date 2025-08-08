@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { chunk } from 'lodash-es';
+
 export type FavoriteTool = { label: string; icon: string };
 
 const props = defineProps({
@@ -8,7 +10,7 @@ const props = defineProps({
 	},
 });
 
-const toolsGroups = _chunk(props.tools, Math.ceil(props.tools.length / 2));
+const toolsGroups = chunk(props.tools, Math.ceil(props.tools.length / 2));
 </script>
 
 <template>

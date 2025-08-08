@@ -1,3 +1,4 @@
+import { kebabCase } from 'lodash-es';
 import { photosRoot, type Album, type Photo } from '~/data/photos';
 
 export async function usePhotoAlbum() {
@@ -13,11 +14,11 @@ export async function usePhotoAlbum() {
 	};
 
 	const getPhotoPath = (photo: Photo) => {
-		return `/photos/${album.slug}/${_kebabCase(photo.title)}/`;
+		return `/photos/${album.slug}/${kebabCase(photo.title)}/`;
 	};
 
 	const getPhotoId = (photo: Photo) => {
-		return `photo--${album.slug}--${_kebabCase(photo.title)}`;
+		return `photo--${album.slug}--${kebabCase(photo.title)}`;
 	};
 
 	const coverPhotoPath = computed(() => {
@@ -28,7 +29,7 @@ export async function usePhotoAlbum() {
 		if (!photoSlug) return null;
 
 		const photo = album.photos.find(
-			(photo) => _kebabCase(photo.title) === photoSlug,
+			(photo) => kebabCase(photo.title) === photoSlug,
 		);
 
 		return photo ?? null;

@@ -1,9 +1,5 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-	compatibilityDate: '2025-06-05',
-	future: {
-		compatibilityVersion: 4,
-	},
+	compatibilityDate: '2025-08-08',
 	experimental: {
 		viewTransition: true,
 		defaults: { nuxtLink: { trailingSlash: 'append' } },
@@ -12,7 +8,6 @@ export default defineNuxtConfig({
 		css: {
 			preprocessorOptions: {
 				scss: {
-					api: 'modern-compiler',
 					loadPaths: ['./app/assets/css'],
 				},
 			},
@@ -24,20 +19,11 @@ export default defineNuxtConfig({
 		typeCheck: true,
 		shim: false,
 	},
-	modules: [
-		'@nuxt/image',
-		'nuxt-lodash',
-		'@vueuse/nuxt',
-		'@vesp/nuxt-fontawesome',
-	],
+	modules: ['@nuxt/image', '@vueuse/nuxt', '@vesp/nuxt-fontawesome'],
 	image: {
 		cloudflare: {
 			baseURL: 'https://dallashoffman.com',
 		},
-	},
-	lodash: {
-		prefix: '_',
-		upperAfterPrefix: false,
 	},
 	fontawesome: {
 		component: 'fa',
