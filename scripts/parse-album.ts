@@ -17,6 +17,7 @@ if (!basePath) {
 	console.log(
 		'Specify the base directory path where the album images are stored.',
 	);
+	process.exit(1);
 }
 
 const albumSlug = path.basename(basePath);
@@ -73,7 +74,7 @@ for (let imgPath of imgPaths) {
 	const dimensions = await imageSizeFromFile(imgPathFull);
 
 	album.photos.push({
-		title: imgPath.split('.')[0],
+		title: imgPath.split('.')[0] ?? '',
 		path: imgPath,
 		width: dimensions.width,
 		height: dimensions.height,

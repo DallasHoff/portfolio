@@ -41,13 +41,25 @@ export async function usePhotoAlbum() {
 	const routePhotoRatioY = computed(() => routePhoto.value?.ratio[1] ?? 1);
 
 	const prevPhotoPath = computed(() => {
-		const photo =
-			album.photos[routePhotoIndex.value - 1] ??
-			album.photos[album.photos.length - 1];
+		const prevPhoto = album.photos[routePhotoIndex.value - 1];
+		const lastPhoto = album.photos[album.photos.length - 1];
+		const photo = prevPhoto ?? lastPhoto;
+
+		if (!photo) {
+			throw new Error('No photo found');
+		}
+
 		return getPhotoPath(photo);
 	});
 	const nextPhotoPath = computed(() => {
-		const photo = album.photos[routePhotoIndex.value + 1] ?? album.photos[0];
+		const nextPhoto = album.photos[routePhotoIndex.value + 1];
+		const firstPhoto = album.photos[0];
+		const photo = nextPhoto ?? firstPhoto;
+
+		if (!photo) {
+			throw new Error('No photo found');
+		}
+
 		return getPhotoPath(photo);
 	});
 

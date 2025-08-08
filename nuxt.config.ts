@@ -1,6 +1,9 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
 	compatibilityDate: '2025-06-05',
+	future: {
+		compatibilityVersion: 4,
+	},
 	experimental: {
 		viewTransition: true,
 		defaults: { nuxtLink: { trailingSlash: 'append' } },
@@ -10,7 +13,7 @@ export default defineNuxtConfig({
 			preprocessorOptions: {
 				scss: {
 					api: 'modern-compiler',
-					loadPaths: ['./assets/css'],
+					loadPaths: ['./app/assets/css'],
 				},
 			},
 		},

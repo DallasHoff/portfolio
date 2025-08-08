@@ -2,7 +2,7 @@
 
 ## Tools Used
 
-- [Nuxt 3](https://v3.nuxtjs.org)
+- [Nuxt](https://nuxt.com)
 - [TypeScript](https://www.typescriptlang.org/docs/)
 - [SCSS](https://sass-lang.com/documentation/)
 - [Lodash](https://lodash.com/docs/)
