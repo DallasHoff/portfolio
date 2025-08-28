@@ -1,5 +1,9 @@
 export default function (varName: string): string {
-	if (process.client && window?.getComputedStyle && document?.documentElement) {
+	if (
+		import.meta.client &&
+		window?.getComputedStyle &&
+		document?.documentElement
+	) {
 		return (
 			window
 				.getComputedStyle(document.documentElement)

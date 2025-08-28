@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import { imageSizeFromFile } from 'image-size/fromFile';
 import { format } from 'prettier';
 import prettierConfig from '../.prettierrc.json';
-import type { Album } from '~/data/photos';
+import type { Album } from '../app/data/photos';
 
 /**
  * Parse a directory of images to create the start of an album configuration file.
