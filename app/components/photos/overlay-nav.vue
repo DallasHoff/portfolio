@@ -1,10 +1,14 @@
 <script setup lang="ts">
-const { prevPhotoPath, nextPhotoPath } = await usePhotoAlbum();
+defineProps({
+	prevPhotoPath: { type: String },
+	nextPhotoPath: { type: String },
+});
 </script>
 
 <template>
 	<nav aria-label="Photo album navigation" class="photos-overlay-nav">
 		<nuxt-link
+			v-if="prevPhotoPath"
 			:to="prevPhotoPath"
 			class="photos-overlay-nav__button photos-overlay-nav__button--left"
 			aria-label="Previous"
@@ -13,6 +17,7 @@ const { prevPhotoPath, nextPhotoPath } = await usePhotoAlbum();
 		</nuxt-link>
 		<div class="photos-overlay-nav__spacer"></div>
 		<nuxt-link
+			v-if="nextPhotoPath"
 			:to="nextPhotoPath"
 			class="photos-overlay-nav__button photos-overlay-nav__button--right"
 			aria-label="Next"

@@ -1,7 +1,7 @@
 import { kebabCase } from 'lodash-es';
-import { photosRoot, type Album, type Photo } from '~/data/photos';
+import { photosRoot, type Album } from '~/data/photos';
 
-export async function usePhotoAlbum() {
+export async function useRoutePhotoAlbum() {
 	const route = useRoute();
 	const albumSlug = route.params.album;
 	const photoSlug = route.params.photo;
@@ -9,37 +9,23 @@ export async function usePhotoAlbum() {
 	const data = await import(`~/data/photos/albums/${albumSlug}.ts`);
 	const album = data.album as Album;
 
-	const getPhotoSrc = (photo: Photo) => {
-		return `${photosRoot}/${album.slug}/${photo.path}`;
-	};
-
-	const getPhotoPath = (photo: Photo) => {
-		return `/photos/${album.slug}/${kebabCase(photo.title)}/`;
-	};
-
-	const getPhotoId = (photo: Photo) => {
-		return `photo--${album.slug}--${kebabCase(photo.title)}`;
-	};
-
 	const coverPhotoPath = computed(() => {
 		return `${photosRoot}/${album.slug}/${album.coverPhotoPath}`;
 	});
 
-	const routePhoto = computed(() => {
+	const photo = computed(() => {
 		if (!photoSlug) return null;
 
-		const photo = album.photos.find(
+		const routePhoto = album.photos.find(
 			(photo) => kebabCase(photo.title) === photoSlug,
 		);
 
-		return photo ?? null;
+		return routePhoto ?? null;
 	});
 
 	const routePhotoIndex = computed(() => {
-		return album.photos.findIndex((photo) => photo === routePhoto.value);
+		return album.photos.findIndex((p) => p === photo.value);
 	});
-	const routePhotoRatioX = computed(() => routePhoto.value?.ratio[0] ?? 1);
-	const routePhotoRatioY = computed(() => routePhoto.value?.ratio[1] ?? 1);
 
 	const prevPhotoPath = computed(() => {
 		const prevPhoto = album.photos[routePhotoIndex.value - 1];
@@ -50,8 +36,9 @@ export async function usePhotoAlbum() {
 			throw new Error('No photo found');
 		}
 
-		return getPhotoPath(photo);
+		return getPhotoPath(photo, album);
 	});
+
 	const nextPhotoPath = computed(() => {
 		const nextPhoto = album.photos[routePhotoIndex.value + 1];
 		const firstPhoto = album.photos[0];
@@ -61,19 +48,14 @@ export async function usePhotoAlbum() {
 			throw new Error('No photo found');
 		}
 
-		return getPhotoPath(photo);
+		return getPhotoPath(photo, album);
 	});
 
 	return {
 		album,
-		getPhotoSrc,
-		getPhotoPath,
-		getPhotoId,
+		photo,
 		coverPhotoPath,
-		routePhoto,
 		routePhotoIndex,
-		routePhotoRatioX,
-		routePhotoRatioY,
 		prevPhotoPath,
 		nextPhotoPath,
 	};

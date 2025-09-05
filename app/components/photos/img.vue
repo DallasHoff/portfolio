@@ -1,40 +1,40 @@
 <script setup lang="ts">
-const {
-	routePhoto: photo,
-	getPhotoSrc,
-	getPhotoId,
-	routePhotoRatioX,
-	routePhotoRatioY,
-} = await usePhotoAlbum();
+import type { Album, Photo } from '~/data/photos';
+
+const props = defineProps({
+	album: { type: Object as PropType<Album>, required: true },
+	photo: { type: Object as PropType<Photo>, required: true },
+});
+
+const { photoRatioX, photoRatioY } = usePhotoRatio(() => props.photo);
 </script>
 
 <template>
-	<div class="photos-route-img">
+	<div class="photos-img">
 		<nuxt-img
 			v-if="photo"
-			:src="getPhotoSrc(photo)"
+			:src="getPhotoSrc(photo, album)"
 			:alt="photo.title"
 			:width="photo.width"
 			:height="photo.height"
 			densities="1x 2x"
-			:placeholder="[routePhotoRatioX * 2, routePhotoRatioY * 2]"
-			placeholder-class="photos-route-img__img--loading"
+			:placeholder="[photoRatioX * 2, photoRatioY * 2]"
+			placeholder-class="photos-img__img--loading"
 			format="auto"
 			provider="cloudflare"
 			preload
-			class="photos-route-img__img"
-			:style="{ 'view-transition-name': getPhotoId(photo) }"
+			class="photos-img__img"
 		/>
 		<fa-icon
 			icon="fa-light fa-loader"
 			spin
-			class="photos-route-img__loader"
+			class="photos-img__loader"
 		></fa-icon>
 	</div>
 </template>
 
 <style scoped lang="scss">
-.photos-route-img {
+.photos-img {
 	position: relative;
 
 	&__img {

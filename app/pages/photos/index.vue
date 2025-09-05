@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { albums, photosRoot } from '~/data/photos';
+import { albums } from '~/data/photos';
 
 usePageMeta({
 	title: 'Photos',
@@ -13,29 +13,7 @@ usePageMeta({
 			<template #hero>
 				<animation-spinning-arcs />
 			</template>
-			<ul class="page-photos__albums">
-				<li v-for="album of albums">
-					<app-article-card
-						:path="`/photos/${album.slug}`"
-						:title="album.title"
-						:subtitle="album.subtitle"
-						:description="`${album.photos.length} Photos`"
-						:image="`${photosRoot}/${album.slug}/${album.coverPhotoPath}`"
-						class="page-photos__album"
-					></app-article-card>
-				</li>
-			</ul>
+			<photos-album-list :albums="albums"></photos-album-list>
 		</nuxt-layout>
 	</div>
 </template>
-
-<style lang="scss">
-.page-photos {
-	&__albums {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 1rem;
-		list-style-type: none;
-	}
-}
-</style>
