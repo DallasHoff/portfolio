@@ -24,9 +24,18 @@ defineProps({
 
 <style scoped lang="scss">
 .photos-album-list {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	display: flex;
+	flex-direction: column;
 	gap: 1rem;
 	list-style-type: none;
+
+	&__album {
+		height: 100%;
+	}
+
+	@media (min-width: 480px) {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	}
 }
 </style>
