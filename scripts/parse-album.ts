@@ -96,7 +96,7 @@ const formattedAlbumFile = await format(albumFile, {
 // Write album file
 const albumFilePath = path.join(
 	basePathAbsolute,
-	`../../../../data/photos/albums/${albumSlug}.ts`,
+	`../../../../app/data/photos/albums/${albumSlug}.ts`,
 );
 await fs.writeFile(albumFilePath, formattedAlbumFile);
 
