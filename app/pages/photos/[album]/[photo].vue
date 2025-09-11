@@ -20,7 +20,6 @@ usePageMeta({
 				:aspect-ratio-y="photoRatioY"
 			>
 				<photos-img
-					v-if="photo"
 					:photo
 					:album
 					class="page-photos-photo__img"

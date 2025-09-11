@@ -17,12 +17,13 @@ const { photoRatioX, photoRatioY } = usePhotoRatio(() => props.photo);
 			:alt="photo.title"
 			:width="photo.width"
 			:height="photo.height"
+			sizes="320px xs:640px sm:1024px lg:1280px xl:1536px 2xl:2016px"
 			densities="1x 2x"
-			:placeholder="[photoRatioX * 2, photoRatioY * 2]"
-			placeholder-class="photos-img__img--loading"
 			format="auto"
 			provider="cloudflare"
 			preload
+			:placeholder="[photoRatioX * 2, photoRatioY * 2]"
+			placeholder-class="photos-img__img--loading"
 			class="photos-img__img"
 		/>
 		<fa-icon
