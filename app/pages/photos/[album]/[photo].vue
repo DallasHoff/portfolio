@@ -4,7 +4,7 @@ const { album, photo, prevPhotoPath, nextPhotoPath } =
 const { photoRatioX, photoRatioY } = usePhotoRatio(photo);
 
 usePageMeta({
-	title: photo.value?.title,
+	title: [photo.value?.title, album.title],
 });
 </script>
 

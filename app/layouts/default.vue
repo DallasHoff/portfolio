@@ -2,6 +2,9 @@
 import { navbarLinks } from '~/data/navbar-links';
 
 const pageMeta = usePageMeta();
+const title = computed(() => getPageTitle(pageMeta.value, ' - '));
+const subtitle = computed(() => pageMeta.value.subtitle);
+const coverPhotoPath = computed(() => pageMeta.value.coverPhotoPath);
 </script>
 
 <template>
@@ -10,8 +13,8 @@ const pageMeta = usePageMeta();
 		<header class="layout-default__header">
 			<div class="layout-default__hero">
 				<nuxt-img
-					v-if="pageMeta.coverPhotoPath"
-					:src="pageMeta.coverPhotoPath"
+					v-if="coverPhotoPath"
+					:src="coverPhotoPath"
 					alt=""
 					sizes="320px xs:640px sm:1024px lg:1280px xl:1536px 2xl:2016px"
 					densities="1x 2x"
@@ -23,11 +26,11 @@ const pageMeta = usePageMeta();
 				<slot name="hero"></slot>
 			</div>
 			<div class="layout-default__content">
-				<h1 v-if="pageMeta.title" class="layout-default__title">
-					{{ pageMeta.title }}
+				<h1 v-if="title" class="layout-default__title">
+					{{ title }}
 				</h1>
-				<div v-if="pageMeta.subtitle" class="layout-default__subtitle">
-					{{ pageMeta.subtitle }}
+				<div v-if="subtitle" class="layout-default__subtitle">
+					{{ subtitle }}
 				</div>
 				<div v-if="$slots.header" class="layout-default__header-slot">
 					<slot name="header"></slot>

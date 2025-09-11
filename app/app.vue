@@ -14,12 +14,7 @@ const keywords: string[] = [
 ];
 
 const title = computed<string>(() => {
-	const titleSegs = [pageMeta.value.title, appName];
-	const delimiter = ' | ';
-
-	return titleSegs
-		.filter((seg, i, segs) => !!seg && seg !== segs[i + 1])
-		.join(delimiter);
+	return getPageTitle(pageMeta.value, ' | ', appName);
 });
 
 const description = computed<string>(() => {
