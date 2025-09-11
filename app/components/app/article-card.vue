@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
 	path: { type: String, required: true },
 	title: { type: String, required: true },
 	subtitle: { type: String },
@@ -7,20 +7,24 @@ const props = defineProps({
 	image: { type: String },
 });
 
-const img = useImage();
-const bgUrl = computed(() => {
-	if (!props.image) return '';
-	const imgUrl = img(
-		props.image,
-		{ width: 800, format: 'auto' },
-		{ provider: 'cloudflare', densities: '1x 2x' },
-	);
-	return `url(${imgUrl})`;
-});
+const bgLoaded = ref<boolean>(false);
+const bgOpacity = computed<number>(() => (bgLoaded.value ? 0.8 : 0));
 </script>
 
 <template>
 	<nuxt-link :to="path" class="app-article-card">
+		<nuxt-img
+			v-if="image"
+			:src="image"
+			alt=""
+			loading="lazy"
+			width="800"
+			densities="1x 2x"
+			format="auto"
+			provider="cloudflare"
+			class="app-article-card__img"
+			@load="bgLoaded = true"
+		></nuxt-img>
 		<div class="app-article-card__content">
 			<h3 class="app-article-card__title">
 				{{ title }}
@@ -46,20 +50,16 @@ const bgUrl = computed(() => {
 	text-decoration: none;
 	overflow: hidden;
 
-	&::before {
-		content: '';
+	&__img {
 		position: absolute;
 		right: 0;
 		top: 0;
 		bottom: 0;
 		width: 60%;
 		max-width: 400px;
-		background-image: v-bind(bgUrl);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
 		mask-image: linear-gradient(70deg, #0000 0%, #0000 20%, #fff 100%);
-		opacity: 0.8;
+		opacity: v-bind(bgOpacity);
+		transition: opacity 300ms;
 	}
 
 	&__content {
