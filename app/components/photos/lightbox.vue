@@ -24,6 +24,7 @@ const { isSwiping, lengthX } = useSwipe(swipeEl, {
 
 onKeyStroke('ArrowLeft', () => swipePhoto('right'));
 onKeyStroke('ArrowRight', () => swipePhoto('left'));
+onKeyStroke('Escape', () => navigateTo(props.subjectLinkPath));
 
 async function swipePhoto(direction: UseSwipeDirection) {
 	let path = direction === 'left' ? (props.nextLinkPath ?? null) : null;

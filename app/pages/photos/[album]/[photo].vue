@@ -12,7 +12,8 @@ usePageMeta({
 	<div class="page-photos-photo">
 		<nuxt-layout name="empty">
 			<photos-lightbox
-				subject-link-path="../"
+				v-if="photo"
+				:subject-link-path="`../#${getPhotoSlug(photo)}`"
 				:prev-link-path="prevPhotoPath"
 				:next-link-path="nextPhotoPath"
 				:aspect-ratio-x="photoRatioX"

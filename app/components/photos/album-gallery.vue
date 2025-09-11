@@ -10,6 +10,7 @@ defineProps({
 	<ul class="photos-album-gallery">
 		<li v-for="photo of album.photos">
 			<nuxt-link
+				:id="getPhotoSlug(photo)"
 				:to="getPhotoPath(photo, album)"
 				class="photos-album-gallery__photo"
 				:style="{
@@ -44,6 +45,7 @@ defineProps({
 		display: block;
 		aspect-ratio: 4 / 3;
 		border-radius: 0.5rem;
+		scroll-margin: 3rem;
 		overflow: hidden;
 	}
 
