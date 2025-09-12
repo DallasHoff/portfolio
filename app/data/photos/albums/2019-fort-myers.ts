@@ -1,0 +1,80 @@
+import type { Album } from '..';
+
+export const album: Album = {
+	title: 'Fort Myers, Florida',
+	subtitle: 'July 2019',
+	slug: '2019-fort-myers',
+	coverPhotoPath: 'IMG_1302.jpeg',
+	photos: [
+		{
+			title: 'Edison and Ford Garden',
+			path: 'IMG_1302.jpeg',
+			width: 4032,
+			height: 3024,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Edison and Ford Pergola',
+			path: 'IMG_1305.jpeg',
+			width: 4032,
+			height: 2880,
+			ratio: [7, 5],
+		},
+		{
+			title: 'Edison and Ford Winter Houses',
+			path: 'IMG_1304.jpeg',
+			width: 4032,
+			height: 2880,
+			ratio: [7, 5],
+		},
+		{
+			title: 'Edison and Ford Tree Path',
+			path: 'IMG_1306.jpeg',
+			width: 4032,
+			height: 2880,
+			ratio: [7, 5],
+		},
+		{
+			title: 'Edison and Ford Pier View',
+			path: 'IMG_1303.jpeg',
+			width: 4032,
+			height: 3024,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Edison and Ford Entry Road',
+			path: 'IMG_1308.jpeg',
+			width: 4032,
+			height: 3024,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Banyan Tree',
+			path: 'IMG_1309.jpeg',
+			width: 4032,
+			height: 3024,
+			ratio: [4, 3],
+		},
+		{
+			title: 'White Ibis Flock',
+			path: 'IMG_1312.jpeg',
+			width: 4032,
+			height: 3024,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Mangrove Coastline',
+			path: 'IMG_1314.jpeg',
+			width: 4032,
+			height: 3024,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Sunset on the Water',
+			path: 'IMG_1315.jpeg',
+			width: 4032,
+			height: 3024,
+			ratio: [4, 3],
+		},
+	],
+};
