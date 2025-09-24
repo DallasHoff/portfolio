@@ -57,5 +57,11 @@ const { photoRatioX, photoRatioY } = usePhotoRatio(() => props.photo);
 	&__img--loading + &__loader {
 		display: block;
 	}
+
+	@media (prefers-reduced-motion) {
+		&__loader {
+			display: none !important;
+		}
+	}
 }
 </style>

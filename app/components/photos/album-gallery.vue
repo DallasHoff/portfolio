@@ -61,6 +61,12 @@ defineProps({
 	&__photo:focus &__img {
 		scale: 1.2;
 	}
+
+	@media (prefers-reduced-motion) {
+		&__img {
+			scale: none !important;
+		}
+	}
 }
 </style>
 
