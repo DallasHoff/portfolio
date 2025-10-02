@@ -23,6 +23,7 @@
     "@fortawesome/pro-light-svg-icons": "^6.5.1",
     "@nuxt/image": "^1.11.0",
     "@types/lodash-es": "^4.17.12",
+    "@types/node": "^24.5.2",
     "@vesp/nuxt-fontawesome": "^2.0.0",
     "@vueuse/core": "^13.6.0",
     "@vueuse/nuxt": "^13.6.0",
