@@ -1,5 +1,10 @@
 <script setup lang="ts">
-export type SocialLink = { label: string; icon: string; url: string };
+export type SocialLink = {
+	label: string;
+	icon: string;
+	url: string;
+	event: string;
+};
 
 defineProps({
 	links: {
@@ -15,6 +20,7 @@ defineProps({
 			<nuxt-link
 				:aria-label="link.label"
 				:to="link.url"
+				v-umami="link.event"
 				class="about-social-links__link"
 			>
 				<fa-icon :icon="link.icon"></fa-icon>

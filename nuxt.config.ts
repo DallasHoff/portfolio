@@ -19,7 +19,12 @@ export default defineNuxtConfig({
 		typeCheck: true,
 		shim: false,
 	},
-	modules: ['@nuxt/image', '@vueuse/nuxt', '@vesp/nuxt-fontawesome'],
+	modules: [
+		'@nuxt/image',
+		'@vueuse/nuxt',
+		'@vesp/nuxt-fontawesome',
+		'nuxt-umami',
+	],
 	image: {
 		cloudflare: {
 			baseURL: 'https://dallashoffman.com',
@@ -47,5 +52,12 @@ export default defineNuxtConfig({
 				'faLoader',
 			],
 		},
+	},
+	umami: {
+		id: '69c5403b-d533-4dec-a87d-96d56bb33abf',
+		host: 'https://umami.cordus.app',
+		domains: ['dallashoffman.com'],
+		autoTrack: true,
+		useDirective: true,
 	},
 });

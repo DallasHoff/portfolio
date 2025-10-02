@@ -3,7 +3,9 @@
 		<fa-icon icon="fa-light fa-bracket-curly-left" size="2xl"></fa-icon>
 		<p>
 			This site is
-			<nuxt-link to="https://github.com/DallasHoff/portfolio"
+			<nuxt-link
+				to="https://github.com/DallasHoff/portfolio"
+				v-umami="'repo-link'"
 				>open source</nuxt-link
 			>.
 		</p>
