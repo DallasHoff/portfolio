@@ -6,6 +6,7 @@ import { album as fortMyers2019 } from './albums/2019-fort-myers';
 import { album as washingtonDc2021 } from './albums/2021-washington-dc';
 import { album as clashFest2025 } from './albums/2025-clash-fest';
 import { album as summer2017 } from './albums/2017-summer';
+import { album as disneyWorld2020 } from './albums/2020-disney-world';
 
 export const albums = [
 	clashFest2025,
@@ -13,6 +14,7 @@ export const albums = [
 	dallasTexas2024,
 	clashFest2023,
 	washingtonDc2021,
+	disneyWorld2020,
 	fortMyers2019,
 	hayHouse2019,
 	summer2017,
