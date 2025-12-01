@@ -5,6 +5,7 @@ import { album as hayHouse2019 } from './albums/2019-hay-house';
 import { album as fortMyers2019 } from './albums/2019-fort-myers';
 import { album as washingtonDc2021 } from './albums/2021-washington-dc';
 import { album as clashFest2025 } from './albums/2025-clash-fest';
+import { album as summer2017 } from './albums/2017-summer';
 
 export const albums = [
 	clashFest2025,
@@ -14,6 +15,7 @@ export const albums = [
 	washingtonDc2021,
 	fortMyers2019,
 	hayHouse2019,
+	summer2017,
 ];
 
 export const photosRoot = '/images/photos';
