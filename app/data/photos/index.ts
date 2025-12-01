@@ -4,8 +4,10 @@ import { album as clashFest2023 } from './albums/2023-clash-fest';
 import { album as hayHouse2019 } from './albums/2019-hay-house';
 import { album as fortMyers2019 } from './albums/2019-fort-myers';
 import { album as washingtonDc2021 } from './albums/2021-washington-dc';
+import { album as clashFest2025 } from './albums/2025-clash-fest';
 
 export const albums = [
+	clashFest2025,
 	southAfrica2025,
 	dallasTexas2024,
 	clashFest2023,
