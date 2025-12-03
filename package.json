@@ -27,6 +27,7 @@
     "@vesp/nuxt-fontawesome": "^2.0.0",
     "@vueuse/core": "^13.6.0",
     "@vueuse/nuxt": "^13.6.0",
+    "color.js": "^1.2.0",
     "image-size": "^2.0.2",
     "lodash-es": "^4.17.21",
     "nuxt": "^4.1.2",

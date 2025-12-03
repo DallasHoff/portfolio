@@ -7,6 +7,11 @@ export const navbarLinks: NavbarLink[] = [
 		path: '/',
 	},
 	{
+		label: 'Projects',
+		icon: 'fa-light fa-display-code',
+		path: '/projects',
+	},
+	{
 		label: 'Photos',
 		icon: 'fa-light fa-image',
 		path: '/photos',
