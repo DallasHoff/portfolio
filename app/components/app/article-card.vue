@@ -57,6 +57,8 @@ const bgOpacity = computed<number>(() => (bgLoaded.value ? 0.8 : 0));
 		bottom: 0;
 		width: 60%;
 		max-width: 400px;
+		height: 100%;
+		object-fit: cover;
 		mask-image: linear-gradient(70deg, #0000 0%, #0000 20%, #fff 100%);
 		opacity: v-bind(bgOpacity);
 		transition: opacity 300ms;
