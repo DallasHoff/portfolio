@@ -7,8 +7,10 @@ import { album as washingtonDc2021 } from './albums/2021-washington-dc';
 import { album as clashFest2025 } from './albums/2025-clash-fest';
 import { album as summer2017 } from './albums/2017-summer';
 import { album as disneyWorld2020 } from './albums/2020-disney-world';
+import { album as leuGardens2025 } from './albums/2025-leu-gardens';
 
 export const albums = [
+	leuGardens2025,
 	clashFest2025,
 	southAfrica2025,
 	dallasTexas2024,
