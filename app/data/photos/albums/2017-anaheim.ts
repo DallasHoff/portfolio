@@ -1,0 +1,80 @@
+import type { Album } from '..';
+
+export const album: Album = {
+	title: 'Anaheim, CA',
+	subtitle: 'July 2017',
+	slug: '2017-anaheim',
+	coverPhotoPath: 'IMG_0466.JPG',
+	photos: [
+		{
+			title: 'Disneyland Light Show',
+			path: 'IMG_0466.JPG',
+			width: 5312,
+			height: 2988,
+			ratio: [16, 9],
+		},
+		{
+			title: 'Disneyland Castle',
+			path: 'IMG_0469.JPG',
+			width: 3264,
+			height: 2448,
+			ratio: [4, 3],
+		},
+		{
+			title: "Disneyland It's a Small World",
+			path: 'IMG_0470.JPG',
+			width: 3264,
+			height: 2448,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Disneyland Toontown',
+			path: 'IMG_0471.JPG',
+			width: 3264,
+			height: 2448,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Guardians of the Galaxy Disneyland',
+			path: 'IMG_0464.JPG',
+			width: 2448,
+			height: 3264,
+			ratio: [3, 4],
+		},
+		{
+			title: 'Hollywood Chinese Theatre',
+			path: 'IMG_0468.JPG',
+			width: 2988,
+			height: 5312,
+			ratio: [9, 16],
+		},
+		{
+			title: 'Hollywood Walk of Fame Godzilla Star',
+			path: 'IMG_0441.JPG',
+			width: 3264,
+			height: 2448,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Hollywood Hills',
+			path: 'IMG_0443.JPG',
+			width: 2448,
+			height: 3264,
+			ratio: [3, 4],
+		},
+		{
+			title: 'Beverly Hills Sign',
+			path: 'IMG_0447.JPG',
+			width: 3264,
+			height: 2448,
+			ratio: [4, 3],
+		},
+		{
+			title: 'Santa Monica Pier',
+			path: 'IMG_0448.JPG',
+			width: 3264,
+			height: 2448,
+			ratio: [4, 3],
+		},
+	],
+};
