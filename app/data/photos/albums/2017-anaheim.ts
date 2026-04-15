@@ -1,7 +1,7 @@
 import type { Album } from '..';
 
 export const album: Album = {
-	title: 'Anaheim, CA',
+	title: 'Anaheim, California',
 	subtitle: 'July 2017',
 	slug: '2017-anaheim',
 	coverPhotoPath: 'IMG_0466.JPG',
