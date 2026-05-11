@@ -11,6 +11,7 @@ import { album as anaheim2017 } from './albums/2017-anaheim';
 import { album as disneyWorld2020 } from './albums/2020-disney-world';
 import { album as leuGardens2025 } from './albums/2025-leu-gardens';
 import { album as lakeEola2025 } from './albums/2025-lake-eola';
+import { album as london2017 } from './albums/2017-london';
 
 export const albums = [
 	leuGardens2025,
@@ -23,6 +24,7 @@ export const albums = [
 	disneyWorld2020,
 	fortMyers2019,
 	hayHouse2019,
+	london2017,
 	anaheim2017,
 	indianapolis2017,
 	ships2017,

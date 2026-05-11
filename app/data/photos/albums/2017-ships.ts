@@ -2,7 +2,7 @@ import type { Album } from '..';
 
 export const album: Album = {
 	title: 'Trips with Ships',
-	subtitle: 'Summer 2017',
+	subtitle: 'May & June 2017',
 	slug: '2017-ships',
 	coverPhotoPath: 'IMG_0407.JPG',
 	photos: [
